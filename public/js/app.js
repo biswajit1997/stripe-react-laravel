@@ -12,6 +12,814 @@ module.exports = __webpack_require__(/*! regenerator-runtime */ "./node_modules/
 
 /***/ }),
 
+/***/ "./node_modules/@stripe/react-stripe-js/dist/react-stripe.umd.js":
+/*!***********************************************************************!*\
+  !*** ./node_modules/@stripe/react-stripe-js/dist/react-stripe.umd.js ***!
+  \***********************************************************************/
+/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
+
+(function (global, factory) {
+   true ? factory(exports, __webpack_require__(/*! react */ "./node_modules/react/index.js")) :
+  0;
+}(this, (function (exports, React) { 'use strict';
+
+  React = React && Object.prototype.hasOwnProperty.call(React, 'default') ? React['default'] : React;
+
+  function _typeof(obj) {
+    "@babel/helpers - typeof";
+
+    if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
+      _typeof = function (obj) {
+        return typeof obj;
+      };
+    } else {
+      _typeof = function (obj) {
+        return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
+      };
+    }
+
+    return _typeof(obj);
+  }
+
+  function _objectWithoutPropertiesLoose(source, excluded) {
+    if (source == null) return {};
+    var target = {};
+    var sourceKeys = Object.keys(source);
+    var key, i;
+
+    for (i = 0; i < sourceKeys.length; i++) {
+      key = sourceKeys[i];
+      if (excluded.indexOf(key) >= 0) continue;
+      target[key] = source[key];
+    }
+
+    return target;
+  }
+
+  function _objectWithoutProperties(source, excluded) {
+    if (source == null) return {};
+
+    var target = _objectWithoutPropertiesLoose(source, excluded);
+
+    var key, i;
+
+    if (Object.getOwnPropertySymbols) {
+      var sourceSymbolKeys = Object.getOwnPropertySymbols(source);
+
+      for (i = 0; i < sourceSymbolKeys.length; i++) {
+        key = sourceSymbolKeys[i];
+        if (excluded.indexOf(key) >= 0) continue;
+        if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue;
+        target[key] = source[key];
+      }
+    }
+
+    return target;
+  }
+
+  function _slicedToArray(arr, i) {
+    return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest();
+  }
+
+  function _arrayWithHoles(arr) {
+    if (Array.isArray(arr)) return arr;
+  }
+
+  function _iterableToArrayLimit(arr, i) {
+    if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return;
+    var _arr = [];
+    var _n = true;
+    var _d = false;
+    var _e = undefined;
+
+    try {
+      for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) {
+        _arr.push(_s.value);
+
+        if (i && _arr.length === i) break;
+      }
+    } catch (err) {
+      _d = true;
+      _e = err;
+    } finally {
+      try {
+        if (!_n && _i["return"] != null) _i["return"]();
+      } finally {
+        if (_d) throw _e;
+      }
+    }
+
+    return _arr;
+  }
+
+  function _unsupportedIterableToArray(o, minLen) {
+    if (!o) return;
+    if (typeof o === "string") return _arrayLikeToArray(o, minLen);
+    var n = Object.prototype.toString.call(o).slice(8, -1);
+    if (n === "Object" && o.constructor) n = o.constructor.name;
+    if (n === "Map" || n === "Set") return Array.from(o);
+    if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen);
+  }
+
+  function _arrayLikeToArray(arr, len) {
+    if (len == null || len > arr.length) len = arr.length;
+
+    for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i];
+
+    return arr2;
+  }
+
+  function _nonIterableRest() {
+    throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
+  }
+
+  function createCommonjsModule(fn, module) {
+  	return module = { exports: {} }, fn(module, module.exports), module.exports;
+  }
+
+  /**
+   * Copyright (c) 2013-present, Facebook, Inc.
+   *
+   * This source code is licensed under the MIT license found in the
+   * LICENSE file in the root directory of this source tree.
+   */
+
+  var ReactPropTypesSecret = 'SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED';
+  var ReactPropTypesSecret_1 = ReactPropTypesSecret;
+
+  function emptyFunction() {}
+
+  function emptyFunctionWithReset() {}
+
+  emptyFunctionWithReset.resetWarningCache = emptyFunction;
+
+  var factoryWithThrowingShims = function () {
+    function shim(props, propName, componentName, location, propFullName, secret) {
+      if (secret === ReactPropTypesSecret_1) {
+        // It is still safe when called from React.
+        return;
+      }
+
+      var err = new Error('Calling PropTypes validators directly is not supported by the `prop-types` package. ' + 'Use PropTypes.checkPropTypes() to call them. ' + 'Read more at http://fb.me/use-check-prop-types');
+      err.name = 'Invariant Violation';
+      throw err;
+    }
+    shim.isRequired = shim;
+
+    function getShim() {
+      return shim;
+    }
+    // Keep this list in sync with production version in `./factoryWithTypeCheckers.js`.
+
+    var ReactPropTypes = {
+      array: shim,
+      bool: shim,
+      func: shim,
+      number: shim,
+      object: shim,
+      string: shim,
+      symbol: shim,
+      any: shim,
+      arrayOf: getShim,
+      element: shim,
+      elementType: shim,
+      instanceOf: getShim,
+      node: shim,
+      objectOf: getShim,
+      oneOf: getShim,
+      oneOfType: getShim,
+      shape: getShim,
+      exact: getShim,
+      checkPropTypes: emptyFunctionWithReset,
+      resetWarningCache: emptyFunction
+    };
+    ReactPropTypes.PropTypes = ReactPropTypes;
+    return ReactPropTypes;
+  };
+
+  var propTypes = createCommonjsModule(function (module) {
+  /**
+   * Copyright (c) 2013-present, Facebook, Inc.
+   *
+   * This source code is licensed under the MIT license found in the
+   * LICENSE file in the root directory of this source tree.
+   */
+  {
+    // By explicitly using `prop-types` you are opting into new production behavior.
+    // http://fb.me/prop-types-in-prod
+    module.exports = factoryWithThrowingShims();
+  }
+  });
+
+  var isUnknownObject = function isUnknownObject(raw) {
+    return raw !== null && _typeof(raw) === 'object';
+  };
+  var isPromise = function isPromise(raw) {
+    return isUnknownObject(raw) && typeof raw.then === 'function';
+  }; // We are using types to enforce the `stripe` prop in this lib,
+  // but in an untyped integration `stripe` could be anything, so we need
+  // to do some sanity validation to prevent type errors.
+
+  var isStripe = function isStripe(raw) {
+    return isUnknownObject(raw) && typeof raw.elements === 'function' && typeof raw.createToken === 'function' && typeof raw.createPaymentMethod === 'function' && typeof raw.confirmCardPayment === 'function';
+  };
+
+  var PLAIN_OBJECT_STR = '[object Object]';
+  var isEqual = function isEqual(left, right) {
+    if (!isUnknownObject(left) || !isUnknownObject(right)) {
+      return left === right;
+    }
+
+    var leftArray = Array.isArray(left);
+    var rightArray = Array.isArray(right);
+    if (leftArray !== rightArray) return false;
+    var leftPlainObject = Object.prototype.toString.call(left) === PLAIN_OBJECT_STR;
+    var rightPlainObject = Object.prototype.toString.call(right) === PLAIN_OBJECT_STR;
+    if (leftPlainObject !== rightPlainObject) return false;
+    if (!leftPlainObject && !leftArray) return false;
+    var leftKeys = Object.keys(left);
+    var rightKeys = Object.keys(right);
+    if (leftKeys.length !== rightKeys.length) return false;
+    var keySet = {};
+
+    for (var i = 0; i < leftKeys.length; i += 1) {
+      keySet[leftKeys[i]] = true;
+    }
+
+    for (var _i = 0; _i < rightKeys.length; _i += 1) {
+      keySet[rightKeys[_i]] = true;
+    }
+
+    var allKeys = Object.keys(keySet);
+
+    if (allKeys.length !== leftKeys.length) {
+      return false;
+    }
+
+    var l = left;
+    var r = right;
+
+    var pred = function pred(key) {
+      return isEqual(l[key], r[key]);
+    };
+
+    return allKeys.every(pred);
+  };
+
+  var usePrevious = function usePrevious(value) {
+    var ref = React.useRef(value);
+    React.useEffect(function () {
+      ref.current = value;
+    }, [value]);
+    return ref.current;
+  };
+
+  var INVALID_STRIPE_ERROR = 'Invalid prop `stripe` supplied to `Elements`. We recommend using the `loadStripe` utility from `@stripe/stripe-js`. See https://stripe.com/docs/stripe-js/react#elements-props-stripe for details.'; // We are using types to enforce the `stripe` prop in this lib, but in a real
+  // integration `stripe` could be anything, so we need to do some sanity
+  // validation to prevent type errors.
+
+  var validateStripe = function validateStripe(maybeStripe) {
+    if (maybeStripe === null || isStripe(maybeStripe)) {
+      return maybeStripe;
+    }
+
+    throw new Error(INVALID_STRIPE_ERROR);
+  };
+
+  var parseStripeProp = function parseStripeProp(raw) {
+    if (isPromise(raw)) {
+      return {
+        tag: 'async',
+        stripePromise: Promise.resolve(raw).then(validateStripe)
+      };
+    }
+
+    var stripe = validateStripe(raw);
+
+    if (stripe === null) {
+      return {
+        tag: 'empty'
+      };
+    }
+
+    return {
+      tag: 'sync',
+      stripe: stripe
+    };
+  };
+
+  var ElementsContext = /*#__PURE__*/React.createContext(null);
+  ElementsContext.displayName = 'ElementsContext';
+  var parseElementsContext = function parseElementsContext(ctx, useCase) {
+    if (!ctx) {
+      throw new Error("Could not find Elements context; You need to wrap the part of your app that ".concat(useCase, " in an <Elements> provider."));
+    }
+
+    return ctx;
+  };
+  /**
+   * The `Elements` provider allows you to use [Element components](https://stripe.com/docs/stripe-js/react#element-components) and access the [Stripe object](https://stripe.com/docs/js/initializing) in any nested component.
+   * Render an `Elements` provider at the root of your React app so that it is available everywhere you need it.
+   *
+   * To use the `Elements` provider, call `loadStripe` from `@stripe/stripe-js` with your publishable key.
+   * The `loadStripe` function will asynchronously load the Stripe.js script and initialize a `Stripe` object.
+   * Pass the returned `Promise` to `Elements`.
+   *
+   * @docs https://stripe.com/docs/stripe-js/react#elements-provider
+   */
+
+  var Elements = function Elements(_ref) {
+    var rawStripeProp = _ref.stripe,
+        options = _ref.options,
+        children = _ref.children;
+
+    var _final = React.useRef(false);
+
+    var isMounted = React.useRef(true);
+    var parsed = React.useMemo(function () {
+      return parseStripeProp(rawStripeProp);
+    }, [rawStripeProp]);
+
+    var _React$useState = React.useState(function () {
+      return {
+        stripe: null,
+        elements: null
+      };
+    }),
+        _React$useState2 = _slicedToArray(_React$useState, 2),
+        ctx = _React$useState2[0],
+        setContext = _React$useState2[1];
+
+    var prevStripe = usePrevious(rawStripeProp);
+    var prevOptions = usePrevious(options);
+
+    if (prevStripe !== null) {
+      if (prevStripe !== rawStripeProp) {
+        console.warn('Unsupported prop change on Elements: You cannot change the `stripe` prop after setting it.');
+      }
+
+      if (!isEqual(options, prevOptions)) {
+        console.warn('Unsupported prop change on Elements: You cannot change the `options` prop after setting the `stripe` prop.');
+      }
+    }
+
+    if (!_final.current) {
+      if (parsed.tag === 'sync') {
+        _final.current = true;
+        setContext({
+          stripe: parsed.stripe,
+          elements: parsed.stripe.elements(options)
+        });
+      }
+
+      if (parsed.tag === 'async') {
+        _final.current = true;
+        parsed.stripePromise.then(function (stripe) {
+          if (stripe && isMounted.current) {
+            // Only update Elements context if the component is still mounted
+            // and stripe is not null. We allow stripe to be null to make
+            // handling SSR easier.
+            setContext({
+              stripe: stripe,
+              elements: stripe.elements(options)
+            });
+          }
+        });
+      }
+    }
+
+    React.useEffect(function () {
+      return function () {
+        isMounted.current = false;
+      };
+    }, []);
+    React.useEffect(function () {
+      var anyStripe = ctx.stripe;
+
+      if (!anyStripe || !anyStripe._registerWrapper) {
+        return;
+      }
+
+      anyStripe._registerWrapper({
+        name: 'react-stripe-js',
+        version: "1.4.0"
+      });
+    }, [ctx.stripe]);
+    return /*#__PURE__*/React.createElement(ElementsContext.Provider, {
+      value: ctx
+    }, children);
+  };
+  Elements.propTypes = {
+    stripe: propTypes.any,
+    options: propTypes.object
+  };
+  var useElementsContextWithUseCase = function useElementsContextWithUseCase(useCaseMessage) {
+    var ctx = React.useContext(ElementsContext);
+    return parseElementsContext(ctx, useCaseMessage);
+  };
+  /**
+   * @docs https://stripe.com/docs/stripe-js/react#useelements-hook
+   */
+
+  var useElements = function useElements() {
+    var _useElementsContextWi = useElementsContextWithUseCase('calls useElements()'),
+        elements = _useElementsContextWi.elements;
+
+    return elements;
+  };
+  /**
+   * @docs https://stripe.com/docs/stripe-js/react#usestripe-hook
+   */
+
+  var useStripe = function useStripe() {
+    var _useElementsContextWi2 = useElementsContextWithUseCase('calls useStripe()'),
+        stripe = _useElementsContextWi2.stripe;
+
+    return stripe;
+  };
+  /**
+   * @docs https://stripe.com/docs/stripe-js/react#elements-consumer
+   */
+
+  var ElementsConsumer = function ElementsConsumer(_ref2) {
+    var children = _ref2.children;
+    var ctx = useElementsContextWithUseCase('mounts <ElementsConsumer>'); // Assert to satisfy the busted React.FC return type (it should be ReactNode)
+
+    return children(ctx);
+  };
+  ElementsConsumer.propTypes = {
+    children: propTypes.func.isRequired
+  };
+
+  var useCallbackReference = function useCallbackReference(cb) {
+    var ref = React.useRef(cb);
+    React.useEffect(function () {
+      ref.current = cb;
+    }, [cb]);
+    return function () {
+      if (ref.current) {
+        ref.current.apply(ref, arguments);
+      }
+    };
+  };
+
+  var extractUpdateableOptions = function extractUpdateableOptions(options) {
+    if (!isUnknownObject(options)) {
+      return {};
+    }
+
+    var _ = options.paymentRequest,
+        rest = _objectWithoutProperties(options, ["paymentRequest"]);
+
+    return rest;
+  };
+
+  var noop = function noop() {};
+
+  var capitalized = function capitalized(str) {
+    return str.charAt(0).toUpperCase() + str.slice(1);
+  };
+
+  var createElementComponent = function createElementComponent(type, isServer) {
+    var displayName = "".concat(capitalized(type), "Element");
+
+    var ClientElement = function ClientElement(_ref) {
+      var id = _ref.id,
+          className = _ref.className,
+          _ref$options = _ref.options,
+          options = _ref$options === void 0 ? {} : _ref$options,
+          _ref$onBlur = _ref.onBlur,
+          onBlur = _ref$onBlur === void 0 ? noop : _ref$onBlur,
+          _ref$onFocus = _ref.onFocus,
+          onFocus = _ref$onFocus === void 0 ? noop : _ref$onFocus,
+          _ref$onReady = _ref.onReady,
+          onReady = _ref$onReady === void 0 ? noop : _ref$onReady,
+          _ref$onChange = _ref.onChange,
+          onChange = _ref$onChange === void 0 ? noop : _ref$onChange,
+          _ref$onEscape = _ref.onEscape,
+          onEscape = _ref$onEscape === void 0 ? noop : _ref$onEscape,
+          _ref$onClick = _ref.onClick,
+          onClick = _ref$onClick === void 0 ? noop : _ref$onClick;
+
+      var _useElementsContextWi = useElementsContextWithUseCase("mounts <".concat(displayName, ">")),
+          elements = _useElementsContextWi.elements;
+
+      var elementRef = React.useRef(null);
+      var domNode = React.useRef(null);
+      var callOnReady = useCallbackReference(onReady);
+      var callOnBlur = useCallbackReference(onBlur);
+      var callOnFocus = useCallbackReference(onFocus);
+      var callOnClick = useCallbackReference(onClick);
+      var callOnChange = useCallbackReference(onChange);
+      var callOnEscape = useCallbackReference(onEscape);
+      React.useLayoutEffect(function () {
+        if (elementRef.current == null && elements && domNode.current != null) {
+          var element = elements.create(type, options);
+          elementRef.current = element;
+          element.mount(domNode.current);
+          element.on('ready', function () {
+            return callOnReady(element);
+          });
+          element.on('change', callOnChange);
+          element.on('blur', callOnBlur);
+          element.on('focus', callOnFocus);
+          element.on('escape', callOnEscape); // Users can pass an an onClick prop on any Element component
+          // just as they could listen for the `click` event on any Element,
+          // but only the PaymentRequestButton will actually trigger the event.
+
+          element.on('click', callOnClick);
+        }
+      });
+      var prevOptions = React.useRef(options);
+      React.useEffect(function () {
+        if (prevOptions.current && prevOptions.current.paymentRequest !== options.paymentRequest) {
+          console.warn('Unsupported prop change: options.paymentRequest is not a customizable property.');
+        }
+
+        var updateableOptions = extractUpdateableOptions(options);
+
+        if (Object.keys(updateableOptions).length !== 0 && !isEqual(updateableOptions, extractUpdateableOptions(prevOptions.current))) {
+          if (elementRef.current) {
+            elementRef.current.update(updateableOptions);
+            prevOptions.current = options;
+          }
+        }
+      }, [options]);
+      React.useLayoutEffect(function () {
+        return function () {
+          if (elementRef.current) {
+            elementRef.current.destroy();
+          }
+        };
+      }, []);
+      return /*#__PURE__*/React.createElement("div", {
+        id: id,
+        className: className,
+        ref: domNode
+      });
+    }; // Only render the Element wrapper in a server environment.
+
+
+    var ServerElement = function ServerElement(props) {
+      // Validate that we are in the right context by calling useElementsContextWithUseCase.
+      useElementsContextWithUseCase("mounts <".concat(displayName, ">"));
+      var id = props.id,
+          className = props.className;
+      return /*#__PURE__*/React.createElement("div", {
+        id: id,
+        className: className
+      });
+    };
+
+    var Element = isServer ? ServerElement : ClientElement;
+    Element.propTypes = {
+      id: propTypes.string,
+      className: propTypes.string,
+      onChange: propTypes.func,
+      onBlur: propTypes.func,
+      onFocus: propTypes.func,
+      onReady: propTypes.func,
+      onClick: propTypes.func,
+      options: propTypes.object
+    };
+    Element.displayName = displayName;
+    Element.__elementType = type;
+    return Element;
+  };
+
+  var isServer = typeof window === 'undefined';
+  /**
+   * Requires beta access:
+   * Contact [Stripe support](https://support.stripe.com/) for more information.
+   *
+   * @docs https://stripe.com/docs/stripe-js/react#element-components
+   */
+
+  var AuBankAccountElement = createElementComponent('auBankAccount', isServer);
+  /**
+   * @docs https://stripe.com/docs/stripe-js/react#element-components
+   */
+
+  var CardElement = createElementComponent('card', isServer);
+  /**
+   * @docs https://stripe.com/docs/stripe-js/react#element-components
+   */
+
+  var CardNumberElement = createElementComponent('cardNumber', isServer);
+  /**
+   * @docs https://stripe.com/docs/stripe-js/react#element-components
+   */
+
+  var CardExpiryElement = createElementComponent('cardExpiry', isServer);
+  /**
+   * @docs https://stripe.com/docs/stripe-js/react#element-components
+   */
+
+  var CardCvcElement = createElementComponent('cardCvc', isServer);
+  /**
+   * @docs https://stripe.com/docs/stripe-js/react#element-components
+   */
+
+  var FpxBankElement = createElementComponent('fpxBank', isServer);
+  /**
+   * @docs https://stripe.com/docs/stripe-js/react#element-components
+   */
+
+  var IbanElement = createElementComponent('iban', isServer);
+  /**
+   * @docs https://stripe.com/docs/stripe-js/react#element-components
+   */
+
+  var IdealBankElement = createElementComponent('idealBank', isServer);
+  /**
+   * @docs https://stripe.com/docs/stripe-js/react#element-components
+   */
+
+  var P24BankElement = createElementComponent('p24Bank', isServer);
+  /**
+   * @docs https://stripe.com/docs/stripe-js/react#element-components
+   */
+
+  var EpsBankElement = createElementComponent('epsBank', isServer);
+  /**
+   * @docs https://stripe.com/docs/stripe-js/react#element-components
+   */
+
+  var PaymentRequestButtonElement = createElementComponent('paymentRequestButton', isServer);
+  /**
+   * @docs https://stripe.com/docs/stripe-js/react#element-components
+   */
+
+  var AfterpayClearpayMessageElement = createElementComponent('afterpayClearpayMessage', isServer);
+
+  exports.AfterpayClearpayMessageElement = AfterpayClearpayMessageElement;
+  exports.AuBankAccountElement = AuBankAccountElement;
+  exports.CardCvcElement = CardCvcElement;
+  exports.CardElement = CardElement;
+  exports.CardExpiryElement = CardExpiryElement;
+  exports.CardNumberElement = CardNumberElement;
+  exports.Elements = Elements;
+  exports.ElementsConsumer = ElementsConsumer;
+  exports.EpsBankElement = EpsBankElement;
+  exports.FpxBankElement = FpxBankElement;
+  exports.IbanElement = IbanElement;
+  exports.IdealBankElement = IdealBankElement;
+  exports.P24BankElement = P24BankElement;
+  exports.PaymentRequestButtonElement = PaymentRequestButtonElement;
+  exports.useElements = useElements;
+  exports.useStripe = useStripe;
+
+  Object.defineProperty(exports, '__esModule', { value: true });
+
+})));
+
+
+/***/ }),
+
+/***/ "./node_modules/@stripe/stripe-js/dist/stripe.esm.js":
+/*!***********************************************************!*\
+  !*** ./node_modules/@stripe/stripe-js/dist/stripe.esm.js ***!
+  \***********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "loadStripe": () => (/* binding */ loadStripe)
+/* harmony export */ });
+var V3_URL = 'https://js.stripe.com/v3';
+var V3_URL_REGEX = /^https:\/\/js\.stripe\.com\/v3\/?(\?.*)?$/;
+var EXISTING_SCRIPT_MESSAGE = 'loadStripe.setLoadParameters was called but an existing Stripe.js script already exists in the document; existing script parameters will be used';
+var findScript = function findScript() {
+  var scripts = document.querySelectorAll("script[src^=\"".concat(V3_URL, "\"]"));
+
+  for (var i = 0; i < scripts.length; i++) {
+    var script = scripts[i];
+
+    if (!V3_URL_REGEX.test(script.src)) {
+      continue;
+    }
+
+    return script;
+  }
+
+  return null;
+};
+
+var injectScript = function injectScript(params) {
+  var queryString = params && !params.advancedFraudSignals ? '?advancedFraudSignals=false' : '';
+  var script = document.createElement('script');
+  script.src = "".concat(V3_URL).concat(queryString);
+  var headOrBody = document.head || document.body;
+
+  if (!headOrBody) {
+    throw new Error('Expected document.body not to be null. Stripe.js requires a <body> element.');
+  }
+
+  headOrBody.appendChild(script);
+  return script;
+};
+
+var registerWrapper = function registerWrapper(stripe, startTime) {
+  if (!stripe || !stripe._registerWrapper) {
+    return;
+  }
+
+  stripe._registerWrapper({
+    name: 'stripe-js',
+    version: "1.13.1",
+    startTime: startTime
+  });
+};
+
+var stripePromise = null;
+var loadScript = function loadScript(params) {
+  // Ensure that we only attempt to load Stripe.js at most once
+  if (stripePromise !== null) {
+    return stripePromise;
+  }
+
+  stripePromise = new Promise(function (resolve, reject) {
+    if (typeof window === 'undefined') {
+      // Resolve to null when imported server side. This makes the module
+      // safe to import in an isomorphic code base.
+      resolve(null);
+      return;
+    }
+
+    if (window.Stripe && params) {
+      console.warn(EXISTING_SCRIPT_MESSAGE);
+    }
+
+    if (window.Stripe) {
+      resolve(window.Stripe);
+      return;
+    }
+
+    try {
+      var script = findScript();
+
+      if (script && params) {
+        console.warn(EXISTING_SCRIPT_MESSAGE);
+      } else if (!script) {
+        script = injectScript(params);
+      }
+
+      script.addEventListener('load', function () {
+        if (window.Stripe) {
+          resolve(window.Stripe);
+        } else {
+          reject(new Error('Stripe.js not available'));
+        }
+      });
+      script.addEventListener('error', function () {
+        reject(new Error('Failed to load Stripe.js'));
+      });
+    } catch (error) {
+      reject(error);
+      return;
+    }
+  });
+  return stripePromise;
+};
+var initStripe = function initStripe(maybeStripe, args, startTime) {
+  if (maybeStripe === null) {
+    return null;
+  }
+
+  var stripe = maybeStripe.apply(undefined, args);
+  registerWrapper(stripe, startTime);
+  return stripe;
+};
+
+// own script injection.
+
+var stripePromise$1 = Promise.resolve().then(function () {
+  return loadScript(null);
+});
+var loadCalled = false;
+stripePromise$1["catch"](function (err) {
+  if (!loadCalled) {
+    console.warn(err);
+  }
+});
+var loadStripe = function loadStripe() {
+  for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+    args[_key] = arguments[_key];
+  }
+
+  loadCalled = true;
+  var startTime = Date.now();
+  return stripePromise$1.then(function (maybeStripe) {
+    return initStripe(maybeStripe, args, startTime);
+  });
+};
+
+
+
+
+/***/ }),
+
 /***/ "./node_modules/axios/index.js":
 /*!*************************************!*\
   !*** ./node_modules/axios/index.js ***!
@@ -1885,49 +2693,66 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   "default": () => (/* binding */ App)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var _Stripe__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Stripe */ "./resources/js/componets/Stripe.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _stripe_stripe_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @stripe/stripe-js */ "./node_modules/@stripe/stripe-js/dist/stripe.esm.js");
+/* harmony import */ var _stripe_react_stripe_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @stripe/react-stripe-js */ "./node_modules/@stripe/react-stripe-js/dist/react-stripe.umd.js");
+/* harmony import */ var _stripe_react_stripe_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_stripe_react_stripe_js__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _CheckoutForm__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./CheckoutForm */ "./resources/js/componets/CheckoutForm.js");
+/* harmony import */ var _App_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./App.css */ "./resources/js/componets/App.css");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+// import React from "react";
+// import Stripe from "./Stripe";
+// // Make sure to call `loadStripe` outside of a component’s render to avoid
+// // recreating the `Stripe` object on every render.
+// // const stripePromise = loadStripe(
+// //     "pk_test_51IXAFNSBBGylYgmsNnENDslumg0UutlaO2bAh2l7OzkPrbfLTxTXXY7nT2cDlKU9bTtJVmcyOgNG8UqKsYjgI1ZH005IAWptqI"
+// // );
+// const App = () => {
+//     return <Stripe />;
+// };
+// export default App;
 
- // Make sure to call `loadStripe` outside of a component’s render to avoid
-// recreating the `Stripe` object on every render.
-// const stripePromise = loadStripe(
-//     "pk_test_51IXAFNSBBGylYgmsNnENDslumg0UutlaO2bAh2l7OzkPrbfLTxTXXY7nT2cDlKU9bTtJVmcyOgNG8UqKsYjgI1ZH005IAWptqI"
-// );
 
 
 
-var App = function App() {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_Stripe__WEBPACK_IMPORTED_MODULE_1__.default, {});
-};
+ // Make sure to call loadStripe outside of a component’s render to avoid
+// recreating the Stripe object on every render.
+// loadStripe is initialized with a fake API key.
+// Sign in to see examples pre-filled with your key.
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (App);
+
+var promise = (0,_stripe_stripe_js__WEBPACK_IMPORTED_MODULE_1__.loadStripe)("pk_test_51IXAFNSBBGylYgmsNnENDslumg0UutlaO2bAh2l7OzkPrbfLTxTXXY7nT2cDlKU9bTtJVmcyOgNG8UqKsYjgI1ZH005IAWptqI");
+function App() {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+    className: "App",
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_stripe_react_stripe_js__WEBPACK_IMPORTED_MODULE_2__.Elements, {
+      stripe: promise,
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_CheckoutForm__WEBPACK_IMPORTED_MODULE_3__.default, {})
+    })
+  });
+}
 
 /***/ }),
 
-/***/ "./resources/js/componets/Stripe.js":
-/*!******************************************!*\
-  !*** ./resources/js/componets/Stripe.js ***!
-  \******************************************/
+/***/ "./resources/js/componets/CheckoutForm.js":
+/*!************************************************!*\
+  !*** ./resources/js/componets/CheckoutForm.js ***!
+  \************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   "default": () => (/* binding */ CheckoutForm)
 /* harmony export */ });
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
-/* harmony import */ var react_stripe_checkout__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-stripe-checkout */ "./node_modules/react-stripe-checkout/dist/main.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var react_toastify__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react-toastify */ "./node_modules/react-toastify/dist/react-toastify.esm.js");
-/* harmony import */ var react_toastify_dist_ReactToastify_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-toastify/dist/ReactToastify.css */ "./node_modules/react-toastify/dist/ReactToastify.css");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _stripe_react_stripe_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @stripe/react-stripe-js */ "./node_modules/@stripe/react-stripe-js/dist/react-stripe.umd.js");
+/* harmony import */ var _stripe_react_stripe_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_stripe_react_stripe_js__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
@@ -1950,144 +2775,168 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
+function CheckoutForm() {
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false),
+      _useState2 = _slicedToArray(_useState, 2),
+      succeeded = _useState2[0],
+      setSucceeded = _useState2[1];
 
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(null),
+      _useState4 = _slicedToArray(_useState3, 2),
+      error = _useState4[0],
+      setError = _useState4[1];
 
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(''),
+      _useState6 = _slicedToArray(_useState5, 2),
+      processing = _useState6[0],
+      setProcessing = _useState6[1];
 
+  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(true),
+      _useState8 = _slicedToArray(_useState7, 2),
+      disabled = _useState8[0],
+      setDisabled = _useState8[1];
 
-react_toastify__WEBPACK_IMPORTED_MODULE_7__.toast.configure();
+  var _useState9 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(''),
+      _useState10 = _slicedToArray(_useState9, 2),
+      clientSecret = _useState10[0],
+      setClientSecret = _useState10[1];
 
-function Stripe() {
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)({
-    name: "Stripe Payment",
-    price: 64998.67,
-    description: "Payment Cool car"
-  }),
-      _useState2 = _slicedToArray(_useState, 1),
-      product = _useState2[0];
+  var stripe = (0,_stripe_react_stripe_js__WEBPACK_IMPORTED_MODULE_2__.useStripe)();
+  var elements = (0,_stripe_react_stripe_js__WEBPACK_IMPORTED_MODULE_2__.useElements)();
+  (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
+    // Create PaymentIntent as soon as the page loads
+    window.fetch("api/create-payment-intent", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify("hhh")
+    }).then(function (res) {
+      return res.json();
+    }).then(function (data) {
+      setClientSecret(data.client_secret);
+    });
+  }, []);
+  var cardStyle = {
+    style: {
+      base: {
+        color: "#32325d",
+        fontFamily: 'Arial, sans-serif',
+        fontSmoothing: "antialiased",
+        fontSize: "16px",
+        "::placeholder": {
+          color: "#32325d"
+        }
+      },
+      invalid: {
+        color: "#fa755a",
+        iconColor: "#fa755a"
+      }
+    }
+  };
 
-  function handleToken() {
-    return _handleToken.apply(this, arguments);
-  }
-
-  function _handleToken() {
-    _handleToken = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
-      var response, status;
+  var handleChange = /*#__PURE__*/function () {
+    var _ref = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee(event) {
       return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
         while (1) {
           switch (_context.prev = _context.next) {
             case 0:
-              _context.next = 2;
-              return axios__WEBPACK_IMPORTED_MODULE_4___default().post("api/create-payment-intent", {
-                product: product
-              });
+              // Listen for changes in the CardElement
+              // and display any errors as the customer types their card details
+              setDisabled(event.empty);
+              setError(event.error ? event.error.message : "");
 
             case 2:
-              response = _context.sent;
-              status = "success";
-
-              if (status === "success") {
-                (0,react_toastify__WEBPACK_IMPORTED_MODULE_7__.toast)("Success! Check email for details", {
-                  type: "success"
-                });
-              } else {
-                (0,react_toastify__WEBPACK_IMPORTED_MODULE_7__.toast)("Something went wrong", {
-                  type: "error"
-                });
-              }
-
-            case 5:
             case "end":
               return _context.stop();
           }
         }
       }, _callee);
     }));
-    return _handleToken.apply(this, arguments);
-  }
 
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
-    className: "container",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
-      className: "product",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("h1", {
-        children: product.name
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("h3", {
-        children: ["On Sale \xB7 ", product.price]
-      })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_stripe_checkout__WEBPACK_IMPORTED_MODULE_3__.default, {
-      stripeKey: "pk_test_51IXAFNSBBGylYgmsNnENDslumg0UutlaO2bAh2l7OzkPrbfLTxTXXY7nT2cDlKU9bTtJVmcyOgNG8UqKsYjgI1ZH005IAWptqI",
-      token: handleToken,
-      amount: product.price,
-      name: "Stripe Payment",
-      billingAddress: true,
-      shippingAddress: true
+    return function handleChange(_x) {
+      return _ref.apply(this, arguments);
+    };
+  }();
+
+  var handleSubmit = /*#__PURE__*/function () {
+    var _ref2 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee2(ev) {
+      var payload;
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee2$(_context2) {
+        while (1) {
+          switch (_context2.prev = _context2.next) {
+            case 0:
+              ev.preventDefault();
+              setProcessing(true);
+              _context2.next = 4;
+              return stripe.confirmCardPayment(clientSecret, {
+                payment_method: {
+                  card: elements.getElement(_stripe_react_stripe_js__WEBPACK_IMPORTED_MODULE_2__.CardElement)
+                }
+              });
+
+            case 4:
+              payload = _context2.sent;
+
+              if (payload.error) {
+                setError("Payment failed ".concat(payload.error.message));
+                setProcessing(false);
+              } else {
+                setError(null);
+                setProcessing(false);
+                setSucceeded(true);
+              }
+
+            case 6:
+            case "end":
+              return _context2.stop();
+          }
+        }
+      }, _callee2);
+    }));
+
+    return function handleSubmit(_x2) {
+      return _ref2.apply(this, arguments);
+    };
+  }();
+
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("form", {
+    id: "payment-form",
+    onSubmit: handleSubmit,
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_stripe_react_stripe_js__WEBPACK_IMPORTED_MODULE_2__.CardElement, {
+      id: "card-element",
+      options: cardStyle,
+      onChange: handleChange
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
+      disabled: processing || disabled || succeeded,
+      id: "submit",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+        id: "button-text",
+        children: processing ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+          className: "spinner",
+          id: "spinner"
+        }) : "Pay now"
+      })
+    }), error && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+      className: "card-error",
+      role: "alert",
+      children: error
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("p", {
+      className: succeeded ? "result-message" : "result-message hidden",
+      children: ["Payment succeeded, see the result in your", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("a", {
+        href: "https://dashboard.stripe.com/test/payments",
+        children: [" ", "Stripe dashboard."]
+      }), " Refresh the page to pay again."]
     })]
   });
 }
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Stripe);
-
 /***/ }),
 
-/***/ "./node_modules/clsx/dist/clsx.m.js":
-/*!******************************************!*\
-  !*** ./node_modules/clsx/dist/clsx.m.js ***!
-  \******************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* export default binding */ __WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-function toVal(mix) {
-	var k, y, str='';
-
-	if (typeof mix === 'string' || typeof mix === 'number') {
-		str += mix;
-	} else if (typeof mix === 'object') {
-		if (Array.isArray(mix)) {
-			for (k=0; k < mix.length; k++) {
-				if (mix[k]) {
-					if (y = toVal(mix[k])) {
-						str && (str += ' ');
-						str += y;
-					}
-				}
-			}
-		} else {
-			for (k in mix) {
-				if (mix[k]) {
-					str && (str += ' ');
-					str += k;
-				}
-			}
-		}
-	}
-
-	return str;
-}
-
-/* harmony default export */ function __WEBPACK_DEFAULT_EXPORT__() {
-	var i=0, tmp, x, str='';
-	while (i < arguments.length) {
-		if (tmp = arguments[i++]) {
-			if (x = toVal(tmp)) {
-				str && (str += ' ');
-				str += x
-			}
-		}
-	}
-	return str;
-}
-
-
-/***/ }),
-
-/***/ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[5].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[5].oneOf[1].use[2]!./node_modules/react-toastify/dist/ReactToastify.css":
-/*!**********************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[5].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[5].oneOf[1].use[2]!./node_modules/react-toastify/dist/ReactToastify.css ***!
-  \**********************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[5].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[5].oneOf[1].use[2]!./resources/js/componets/App.css":
+/*!**************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[5].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[5].oneOf[1].use[2]!./resources/js/componets/App.css ***!
+  \**************************************************************************************************************************************************************************************************/
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -2095,13 +2944,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
-/* harmony import */ var _css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
 // Imports
 
-var ___CSS_LOADER_EXPORT___ = _css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".Toastify__toast-container {\n  z-index: 9999;\n  -webkit-transform: translate3d(0, 0, 9999px);\n  position: fixed;\n  padding: 4px;\n  width: 320px;\n  box-sizing: border-box;\n  color: #fff;\n}\n.Toastify__toast-container--top-left {\n  top: 1em;\n  left: 1em;\n}\n.Toastify__toast-container--top-center {\n  top: 1em;\n  left: 50%;\n  transform: translateX(-50%);\n}\n.Toastify__toast-container--top-right {\n  top: 1em;\n  right: 1em;\n}\n.Toastify__toast-container--bottom-left {\n  bottom: 1em;\n  left: 1em;\n}\n.Toastify__toast-container--bottom-center {\n  bottom: 1em;\n  left: 50%;\n  transform: translateX(-50%);\n}\n.Toastify__toast-container--bottom-right {\n  bottom: 1em;\n  right: 1em;\n}\n\n@media only screen and (max-width : 480px) {\n  .Toastify__toast-container {\n    width: 100vw;\n    padding: 0;\n    left: 0;\n    margin: 0;\n  }\n  .Toastify__toast-container--top-left, .Toastify__toast-container--top-center, .Toastify__toast-container--top-right {\n    top: 0;\n    transform: translateX(0);\n  }\n  .Toastify__toast-container--bottom-left, .Toastify__toast-container--bottom-center, .Toastify__toast-container--bottom-right {\n    bottom: 0;\n    transform: translateX(0);\n  }\n  .Toastify__toast-container--rtl {\n    right: 0;\n    left: initial;\n  }\n}\n.Toastify__toast {\n  position: relative;\n  min-height: 64px;\n  box-sizing: border-box;\n  margin-bottom: 1rem;\n  padding: 8px;\n  border-radius: 4px;\n  box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.1), 0 2px 15px 0 rgba(0, 0, 0, 0.05);\n  display: flex;\n  justify-content: space-between;\n  max-height: 800px;\n  overflow: hidden;\n  font-family: sans-serif;\n  cursor: pointer;\n  direction: ltr;\n}\n.Toastify__toast--rtl {\n  direction: rtl;\n}\n.Toastify__toast--dark {\n  background: #121212;\n  color: #fff;\n}\n.Toastify__toast--default {\n  background: #fff;\n  color: #aaa;\n}\n.Toastify__toast--info {\n  background: #3498db;\n}\n.Toastify__toast--success {\n  background: #07bc0c;\n}\n.Toastify__toast--warning {\n  background: #f1c40f;\n}\n.Toastify__toast--error {\n  background: #e74c3c;\n}\n.Toastify__toast-body {\n  margin: auto 0;\n  padding: 6px;\n}\n\n.Toastify--animate {\n  -webkit-animation-fill-mode: both;\n          animation-fill-mode: both;\n  -webkit-animation-duration: 0.7s;\n          animation-duration: 0.7s;\n}\n\n@media only screen and (max-width : 480px) {\n  .Toastify__toast {\n    margin-bottom: 0;\n  }\n}\n.Toastify__close-button {\n  color: #fff;\n  background: transparent;\n  outline: none;\n  border: none;\n  padding: 0;\n  cursor: pointer;\n  opacity: 0.7;\n  transition: 0.3s ease;\n  align-self: flex-start;\n}\n.Toastify__close-button--default {\n  color: #000;\n  opacity: 0.3;\n}\n.Toastify__close-button > svg {\n  fill: currentColor;\n  height: 16px;\n  width: 14px;\n}\n.Toastify__close-button:hover, .Toastify__close-button:focus {\n  opacity: 1;\n}\n\n@-webkit-keyframes Toastify__trackProgress {\n  0% {\n    transform: scaleX(1);\n  }\n  100% {\n    transform: scaleX(0);\n  }\n}\n\n@keyframes Toastify__trackProgress {\n  0% {\n    transform: scaleX(1);\n  }\n  100% {\n    transform: scaleX(0);\n  }\n}\n.Toastify__progress-bar {\n  position: absolute;\n  bottom: 0;\n  left: 0;\n  width: 100%;\n  height: 5px;\n  z-index: 9999;\n  opacity: 0.7;\n  background-color: rgba(255, 255, 255, 0.7);\n  transform-origin: left;\n}\n.Toastify__progress-bar--animated {\n  -webkit-animation: Toastify__trackProgress linear 1 forwards;\n          animation: Toastify__trackProgress linear 1 forwards;\n}\n.Toastify__progress-bar--controlled {\n  transition: transform 0.2s;\n}\n.Toastify__progress-bar--rtl {\n  right: 0;\n  left: initial;\n  transform-origin: right;\n}\n.Toastify__progress-bar--default {\n  background: linear-gradient(to right, #4cd964, #5ac8fa, #007aff, #34aadc, #5856d6, #ff2d55);\n}\n.Toastify__progress-bar--dark {\n  background: #bb86fc;\n}\n@-webkit-keyframes Toastify__bounceInRight {\n  from, 60%, 75%, 90%, to {\n    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);\n            animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);\n  }\n  from {\n    opacity: 0;\n    transform: translate3d(3000px, 0, 0);\n  }\n  60% {\n    opacity: 1;\n    transform: translate3d(-25px, 0, 0);\n  }\n  75% {\n    transform: translate3d(10px, 0, 0);\n  }\n  90% {\n    transform: translate3d(-5px, 0, 0);\n  }\n  to {\n    transform: none;\n  }\n}\n@keyframes Toastify__bounceInRight {\n  from, 60%, 75%, 90%, to {\n    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);\n            animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);\n  }\n  from {\n    opacity: 0;\n    transform: translate3d(3000px, 0, 0);\n  }\n  60% {\n    opacity: 1;\n    transform: translate3d(-25px, 0, 0);\n  }\n  75% {\n    transform: translate3d(10px, 0, 0);\n  }\n  90% {\n    transform: translate3d(-5px, 0, 0);\n  }\n  to {\n    transform: none;\n  }\n}\n@-webkit-keyframes Toastify__bounceOutRight {\n  20% {\n    opacity: 1;\n    transform: translate3d(-20px, 0, 0);\n  }\n  to {\n    opacity: 0;\n    transform: translate3d(2000px, 0, 0);\n  }\n}\n@keyframes Toastify__bounceOutRight {\n  20% {\n    opacity: 1;\n    transform: translate3d(-20px, 0, 0);\n  }\n  to {\n    opacity: 0;\n    transform: translate3d(2000px, 0, 0);\n  }\n}\n@-webkit-keyframes Toastify__bounceInLeft {\n  from, 60%, 75%, 90%, to {\n    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);\n            animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);\n  }\n  0% {\n    opacity: 0;\n    transform: translate3d(-3000px, 0, 0);\n  }\n  60% {\n    opacity: 1;\n    transform: translate3d(25px, 0, 0);\n  }\n  75% {\n    transform: translate3d(-10px, 0, 0);\n  }\n  90% {\n    transform: translate3d(5px, 0, 0);\n  }\n  to {\n    transform: none;\n  }\n}\n@keyframes Toastify__bounceInLeft {\n  from, 60%, 75%, 90%, to {\n    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);\n            animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);\n  }\n  0% {\n    opacity: 0;\n    transform: translate3d(-3000px, 0, 0);\n  }\n  60% {\n    opacity: 1;\n    transform: translate3d(25px, 0, 0);\n  }\n  75% {\n    transform: translate3d(-10px, 0, 0);\n  }\n  90% {\n    transform: translate3d(5px, 0, 0);\n  }\n  to {\n    transform: none;\n  }\n}\n@-webkit-keyframes Toastify__bounceOutLeft {\n  20% {\n    opacity: 1;\n    transform: translate3d(20px, 0, 0);\n  }\n  to {\n    opacity: 0;\n    transform: translate3d(-2000px, 0, 0);\n  }\n}\n@keyframes Toastify__bounceOutLeft {\n  20% {\n    opacity: 1;\n    transform: translate3d(20px, 0, 0);\n  }\n  to {\n    opacity: 0;\n    transform: translate3d(-2000px, 0, 0);\n  }\n}\n@-webkit-keyframes Toastify__bounceInUp {\n  from, 60%, 75%, 90%, to {\n    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);\n            animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);\n  }\n  from {\n    opacity: 0;\n    transform: translate3d(0, 3000px, 0);\n  }\n  60% {\n    opacity: 1;\n    transform: translate3d(0, -20px, 0);\n  }\n  75% {\n    transform: translate3d(0, 10px, 0);\n  }\n  90% {\n    transform: translate3d(0, -5px, 0);\n  }\n  to {\n    transform: translate3d(0, 0, 0);\n  }\n}\n@keyframes Toastify__bounceInUp {\n  from, 60%, 75%, 90%, to {\n    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);\n            animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);\n  }\n  from {\n    opacity: 0;\n    transform: translate3d(0, 3000px, 0);\n  }\n  60% {\n    opacity: 1;\n    transform: translate3d(0, -20px, 0);\n  }\n  75% {\n    transform: translate3d(0, 10px, 0);\n  }\n  90% {\n    transform: translate3d(0, -5px, 0);\n  }\n  to {\n    transform: translate3d(0, 0, 0);\n  }\n}\n@-webkit-keyframes Toastify__bounceOutUp {\n  20% {\n    transform: translate3d(0, -10px, 0);\n  }\n  40%, 45% {\n    opacity: 1;\n    transform: translate3d(0, 20px, 0);\n  }\n  to {\n    opacity: 0;\n    transform: translate3d(0, -2000px, 0);\n  }\n}\n@keyframes Toastify__bounceOutUp {\n  20% {\n    transform: translate3d(0, -10px, 0);\n  }\n  40%, 45% {\n    opacity: 1;\n    transform: translate3d(0, 20px, 0);\n  }\n  to {\n    opacity: 0;\n    transform: translate3d(0, -2000px, 0);\n  }\n}\n@-webkit-keyframes Toastify__bounceInDown {\n  from, 60%, 75%, 90%, to {\n    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);\n            animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);\n  }\n  0% {\n    opacity: 0;\n    transform: translate3d(0, -3000px, 0);\n  }\n  60% {\n    opacity: 1;\n    transform: translate3d(0, 25px, 0);\n  }\n  75% {\n    transform: translate3d(0, -10px, 0);\n  }\n  90% {\n    transform: translate3d(0, 5px, 0);\n  }\n  to {\n    transform: none;\n  }\n}\n@keyframes Toastify__bounceInDown {\n  from, 60%, 75%, 90%, to {\n    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);\n            animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);\n  }\n  0% {\n    opacity: 0;\n    transform: translate3d(0, -3000px, 0);\n  }\n  60% {\n    opacity: 1;\n    transform: translate3d(0, 25px, 0);\n  }\n  75% {\n    transform: translate3d(0, -10px, 0);\n  }\n  90% {\n    transform: translate3d(0, 5px, 0);\n  }\n  to {\n    transform: none;\n  }\n}\n@-webkit-keyframes Toastify__bounceOutDown {\n  20% {\n    transform: translate3d(0, 10px, 0);\n  }\n  40%, 45% {\n    opacity: 1;\n    transform: translate3d(0, -20px, 0);\n  }\n  to {\n    opacity: 0;\n    transform: translate3d(0, 2000px, 0);\n  }\n}\n@keyframes Toastify__bounceOutDown {\n  20% {\n    transform: translate3d(0, 10px, 0);\n  }\n  40%, 45% {\n    opacity: 1;\n    transform: translate3d(0, -20px, 0);\n  }\n  to {\n    opacity: 0;\n    transform: translate3d(0, 2000px, 0);\n  }\n}\n.Toastify__bounce-enter--top-left, .Toastify__bounce-enter--bottom-left {\n  -webkit-animation-name: Toastify__bounceInLeft;\n          animation-name: Toastify__bounceInLeft;\n}\n.Toastify__bounce-enter--top-right, .Toastify__bounce-enter--bottom-right {\n  -webkit-animation-name: Toastify__bounceInRight;\n          animation-name: Toastify__bounceInRight;\n}\n.Toastify__bounce-enter--top-center {\n  -webkit-animation-name: Toastify__bounceInDown;\n          animation-name: Toastify__bounceInDown;\n}\n.Toastify__bounce-enter--bottom-center {\n  -webkit-animation-name: Toastify__bounceInUp;\n          animation-name: Toastify__bounceInUp;\n}\n\n.Toastify__bounce-exit--top-left, .Toastify__bounce-exit--bottom-left {\n  -webkit-animation-name: Toastify__bounceOutLeft;\n          animation-name: Toastify__bounceOutLeft;\n}\n.Toastify__bounce-exit--top-right, .Toastify__bounce-exit--bottom-right {\n  -webkit-animation-name: Toastify__bounceOutRight;\n          animation-name: Toastify__bounceOutRight;\n}\n.Toastify__bounce-exit--top-center {\n  -webkit-animation-name: Toastify__bounceOutUp;\n          animation-name: Toastify__bounceOutUp;\n}\n.Toastify__bounce-exit--bottom-center {\n  -webkit-animation-name: Toastify__bounceOutDown;\n          animation-name: Toastify__bounceOutDown;\n}\n\n@-webkit-keyframes Toastify__zoomIn {\n  from {\n    opacity: 0;\n    transform: scale3d(0.3, 0.3, 0.3);\n  }\n  50% {\n    opacity: 1;\n  }\n}\n\n@keyframes Toastify__zoomIn {\n  from {\n    opacity: 0;\n    transform: scale3d(0.3, 0.3, 0.3);\n  }\n  50% {\n    opacity: 1;\n  }\n}\n@-webkit-keyframes Toastify__zoomOut {\n  from {\n    opacity: 1;\n  }\n  50% {\n    opacity: 0;\n    transform: scale3d(0.3, 0.3, 0.3);\n  }\n  to {\n    opacity: 0;\n  }\n}\n@keyframes Toastify__zoomOut {\n  from {\n    opacity: 1;\n  }\n  50% {\n    opacity: 0;\n    transform: scale3d(0.3, 0.3, 0.3);\n  }\n  to {\n    opacity: 0;\n  }\n}\n.Toastify__zoom-enter {\n  -webkit-animation-name: Toastify__zoomIn;\n          animation-name: Toastify__zoomIn;\n}\n\n.Toastify__zoom-exit {\n  -webkit-animation-name: Toastify__zoomOut;\n          animation-name: Toastify__zoomOut;\n}\n\n@-webkit-keyframes Toastify__flipIn {\n  from {\n    transform: perspective(400px) rotate3d(1, 0, 0, 90deg);\n    -webkit-animation-timing-function: ease-in;\n            animation-timing-function: ease-in;\n    opacity: 0;\n  }\n  40% {\n    transform: perspective(400px) rotate3d(1, 0, 0, -20deg);\n    -webkit-animation-timing-function: ease-in;\n            animation-timing-function: ease-in;\n  }\n  60% {\n    transform: perspective(400px) rotate3d(1, 0, 0, 10deg);\n    opacity: 1;\n  }\n  80% {\n    transform: perspective(400px) rotate3d(1, 0, 0, -5deg);\n  }\n  to {\n    transform: perspective(400px);\n  }\n}\n\n@keyframes Toastify__flipIn {\n  from {\n    transform: perspective(400px) rotate3d(1, 0, 0, 90deg);\n    -webkit-animation-timing-function: ease-in;\n            animation-timing-function: ease-in;\n    opacity: 0;\n  }\n  40% {\n    transform: perspective(400px) rotate3d(1, 0, 0, -20deg);\n    -webkit-animation-timing-function: ease-in;\n            animation-timing-function: ease-in;\n  }\n  60% {\n    transform: perspective(400px) rotate3d(1, 0, 0, 10deg);\n    opacity: 1;\n  }\n  80% {\n    transform: perspective(400px) rotate3d(1, 0, 0, -5deg);\n  }\n  to {\n    transform: perspective(400px);\n  }\n}\n@-webkit-keyframes Toastify__flipOut {\n  from {\n    transform: perspective(400px);\n  }\n  30% {\n    transform: perspective(400px) rotate3d(1, 0, 0, -20deg);\n    opacity: 1;\n  }\n  to {\n    transform: perspective(400px) rotate3d(1, 0, 0, 90deg);\n    opacity: 0;\n  }\n}\n@keyframes Toastify__flipOut {\n  from {\n    transform: perspective(400px);\n  }\n  30% {\n    transform: perspective(400px) rotate3d(1, 0, 0, -20deg);\n    opacity: 1;\n  }\n  to {\n    transform: perspective(400px) rotate3d(1, 0, 0, 90deg);\n    opacity: 0;\n  }\n}\n.Toastify__flip-enter {\n  -webkit-animation-name: Toastify__flipIn;\n          animation-name: Toastify__flipIn;\n}\n\n.Toastify__flip-exit {\n  -webkit-animation-name: Toastify__flipOut;\n          animation-name: Toastify__flipOut;\n}\n\n@-webkit-keyframes Toastify__slideInRight {\n  from {\n    transform: translate3d(110%, 0, 0);\n    visibility: visible;\n  }\n  to {\n    transform: translate3d(0, 0, 0);\n  }\n}\n\n@keyframes Toastify__slideInRight {\n  from {\n    transform: translate3d(110%, 0, 0);\n    visibility: visible;\n  }\n  to {\n    transform: translate3d(0, 0, 0);\n  }\n}\n@-webkit-keyframes Toastify__slideInLeft {\n  from {\n    transform: translate3d(-110%, 0, 0);\n    visibility: visible;\n  }\n  to {\n    transform: translate3d(0, 0, 0);\n  }\n}\n@keyframes Toastify__slideInLeft {\n  from {\n    transform: translate3d(-110%, 0, 0);\n    visibility: visible;\n  }\n  to {\n    transform: translate3d(0, 0, 0);\n  }\n}\n@-webkit-keyframes Toastify__slideInUp {\n  from {\n    transform: translate3d(0, 110%, 0);\n    visibility: visible;\n  }\n  to {\n    transform: translate3d(0, 0, 0);\n  }\n}\n@keyframes Toastify__slideInUp {\n  from {\n    transform: translate3d(0, 110%, 0);\n    visibility: visible;\n  }\n  to {\n    transform: translate3d(0, 0, 0);\n  }\n}\n@-webkit-keyframes Toastify__slideInDown {\n  from {\n    transform: translate3d(0, -110%, 0);\n    visibility: visible;\n  }\n  to {\n    transform: translate3d(0, 0, 0);\n  }\n}\n@keyframes Toastify__slideInDown {\n  from {\n    transform: translate3d(0, -110%, 0);\n    visibility: visible;\n  }\n  to {\n    transform: translate3d(0, 0, 0);\n  }\n}\n@-webkit-keyframes Toastify__slideOutRight {\n  from {\n    transform: translate3d(0, 0, 0);\n  }\n  to {\n    visibility: hidden;\n    transform: translate3d(110%, 0, 0);\n  }\n}\n@keyframes Toastify__slideOutRight {\n  from {\n    transform: translate3d(0, 0, 0);\n  }\n  to {\n    visibility: hidden;\n    transform: translate3d(110%, 0, 0);\n  }\n}\n@-webkit-keyframes Toastify__slideOutLeft {\n  from {\n    transform: translate3d(0, 0, 0);\n  }\n  to {\n    visibility: hidden;\n    transform: translate3d(-110%, 0, 0);\n  }\n}\n@keyframes Toastify__slideOutLeft {\n  from {\n    transform: translate3d(0, 0, 0);\n  }\n  to {\n    visibility: hidden;\n    transform: translate3d(-110%, 0, 0);\n  }\n}\n@-webkit-keyframes Toastify__slideOutDown {\n  from {\n    transform: translate3d(0, 0, 0);\n  }\n  to {\n    visibility: hidden;\n    transform: translate3d(0, 500px, 0);\n  }\n}\n@keyframes Toastify__slideOutDown {\n  from {\n    transform: translate3d(0, 0, 0);\n  }\n  to {\n    visibility: hidden;\n    transform: translate3d(0, 500px, 0);\n  }\n}\n@-webkit-keyframes Toastify__slideOutUp {\n  from {\n    transform: translate3d(0, 0, 0);\n  }\n  to {\n    visibility: hidden;\n    transform: translate3d(0, -500px, 0);\n  }\n}\n@keyframes Toastify__slideOutUp {\n  from {\n    transform: translate3d(0, 0, 0);\n  }\n  to {\n    visibility: hidden;\n    transform: translate3d(0, -500px, 0);\n  }\n}\n.Toastify__slide-enter--top-left, .Toastify__slide-enter--bottom-left {\n  -webkit-animation-name: Toastify__slideInLeft;\n          animation-name: Toastify__slideInLeft;\n}\n.Toastify__slide-enter--top-right, .Toastify__slide-enter--bottom-right {\n  -webkit-animation-name: Toastify__slideInRight;\n          animation-name: Toastify__slideInRight;\n}\n.Toastify__slide-enter--top-center {\n  -webkit-animation-name: Toastify__slideInDown;\n          animation-name: Toastify__slideInDown;\n}\n.Toastify__slide-enter--bottom-center {\n  -webkit-animation-name: Toastify__slideInUp;\n          animation-name: Toastify__slideInUp;\n}\n\n.Toastify__slide-exit--top-left, .Toastify__slide-exit--bottom-left {\n  -webkit-animation-name: Toastify__slideOutLeft;\n          animation-name: Toastify__slideOutLeft;\n}\n.Toastify__slide-exit--top-right, .Toastify__slide-exit--bottom-right {\n  -webkit-animation-name: Toastify__slideOutRight;\n          animation-name: Toastify__slideOutRight;\n}\n.Toastify__slide-exit--top-center {\n  -webkit-animation-name: Toastify__slideOutUp;\n          animation-name: Toastify__slideOutUp;\n}\n.Toastify__slide-exit--bottom-center {\n  -webkit-animation-name: Toastify__slideOutDown;\n          animation-name: Toastify__slideOutDown;\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "#root {\n    display: flex;\n    align-items: center;\n  }\n  \n  body {\n    font-family: -apple-system, BlinkMacSystemFont, sans-serif;\n    font-size: 16px;\n    -webkit-font-smoothing: antialiased;\n    display: flex;\n    justify-content: center;\n    align-content: center;\n    height: 100vh;\n    width: 100vw;\n  }\n  \n  form {\n    width: 30vw;\n    align-self: center;\n    box-shadow: 0px 0px 0px 0.5px rgba(50, 50, 93, 0.1),\n      0px 2px 5px 0px rgba(50, 50, 93, 0.1), 0px 1px 1.5px 0px rgba(0, 0, 0, 0.07);\n    border-radius: 7px;\n    padding: 40px;\n  }\n  \n  input {\n    border-radius: 6px;\n    margin-bottom: 6px;\n    padding: 12px;\n    border: 1px solid rgba(50, 50, 93, 0.1);\n    max-height: 44px;\n    font-size: 16px;\n    width: 100%;\n    background: white;\n    box-sizing: border-box;\n  }\n  \n  .result-message {\n    line-height: 22px;\n    font-size: 16px;\n  }\n  \n  .result-message a {\n    color: rgb(89, 111, 214);\n    font-weight: 600;\n    text-decoration: none;\n  }\n  \n  .hidden {\n    display: none;\n  }\n  \n  #card-error {\n    color: rgb(105, 115, 134);\n    font-size: 16px;\n    line-height: 20px;\n    margin-top: 12px;\n    text-align: center;\n  }\n  \n  #card-element {\n    border-radius: 4px 4px 0 0;\n    padding: 12px;\n    border: 1px solid rgba(50, 50, 93, 0.1);\n    max-height: 44px;\n    width: 100%;\n    background: white;\n    box-sizing: border-box;\n  }\n  \n  #payment-request-button {\n    margin-bottom: 32px;\n  }\n  \n  /* Buttons and links */\n  button {\n    background: #5469d4;\n    font-family: Arial, sans-serif;\n    color: #ffffff;\n    border-radius: 0 0 4px 4px;\n    border: 0;\n    padding: 12px 16px;\n    font-size: 16px;\n    font-weight: 600;\n    cursor: pointer;\n    display: block;\n    transition: all 0.2s ease;\n    box-shadow: 0px 4px 5.5px 0px rgba(0, 0, 0, 0.07);\n    width: 100%;\n  }\n  \n  button:hover {\n    filter: contrast(115%);\n  }\n  \n  button:disabled {\n    opacity: 0.5;\n    cursor: default;\n  }\n  \n  /* spinner/processing state, errors */\n  .spinner,\n  .spinner:before,\n  .spinner:after {\n    border-radius: 50%;\n  }\n  \n  .spinner {\n    color: #ffffff;\n    font-size: 22px;\n    text-indent: -99999px;\n    margin: 0px auto;\n    position: relative;\n    width: 20px;\n    height: 20px;\n    box-shadow: inset 0 0 0 2px;\n    transform: translateZ(0);\n  }\n  \n  .spinner:before,\n  .spinner:after {\n    position: absolute;\n    content: \"\";\n  }\n  \n  .spinner:before {\n    width: 10.4px;\n    height: 20.4px;\n    background: #5469d4;\n    border-radius: 20.4px 0 0 20.4px;\n    top: -0.2px;\n    left: -0.2px;\n    transform-origin: 10.4px 10.2px;\n    -webkit-animation: loading 2s infinite ease 1.5s;\n    animation: loading 2s infinite ease 1.5s;\n  }\n  \n  .spinner:after {\n    width: 10.4px;\n    height: 10.2px;\n    background: #5469d4;\n    border-radius: 0 10.2px 10.2px 0;\n    top: -0.1px;\n    left: 10.2px;\n    transform-origin: 0px 10.2px;\n    -webkit-animation: loading 2s infinite ease;\n    animation: loading 2s infinite ease;\n  }\n  \n  @-webkit-keyframes loading {\n    0% {\n      transform: rotate(0deg);\n    }\n    100% {\n      transform: rotate(360deg);\n    }\n  }\n  \n  @keyframes loading {\n    0% {\n      transform: rotate(0deg);\n    }\n    100% {\n      transform: rotate(360deg);\n    }\n  }\n  \n  @media only screen and (max-width: 600px) {\n    form {\n      width: 80vw;\n    }\n  }\n  ", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -19687,769 +20536,6 @@ process.chdir = function (dir) {
     throw new Error('process.chdir is not supported');
 };
 process.umask = function() { return 0; };
-
-
-/***/ }),
-
-/***/ "./node_modules/prop-types/checkPropTypes.js":
-/*!***************************************************!*\
-  !*** ./node_modules/prop-types/checkPropTypes.js ***!
-  \***************************************************/
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
-
-"use strict";
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
-
-
-
-var printWarning = function() {};
-
-if (true) {
-  var ReactPropTypesSecret = __webpack_require__(/*! ./lib/ReactPropTypesSecret */ "./node_modules/prop-types/lib/ReactPropTypesSecret.js");
-  var loggedTypeFailures = {};
-  var has = Function.call.bind(Object.prototype.hasOwnProperty);
-
-  printWarning = function(text) {
-    var message = 'Warning: ' + text;
-    if (typeof console !== 'undefined') {
-      console.error(message);
-    }
-    try {
-      // --- Welcome to debugging React ---
-      // This error was thrown as a convenience so that you can use this stack
-      // to find the callsite that caused this warning to fire.
-      throw new Error(message);
-    } catch (x) {}
-  };
-}
-
-/**
- * Assert that the values match with the type specs.
- * Error messages are memorized and will only be shown once.
- *
- * @param {object} typeSpecs Map of name to a ReactPropType
- * @param {object} values Runtime values that need to be type-checked
- * @param {string} location e.g. "prop", "context", "child context"
- * @param {string} componentName Name of the component for error messages.
- * @param {?Function} getStack Returns the component stack.
- * @private
- */
-function checkPropTypes(typeSpecs, values, location, componentName, getStack) {
-  if (true) {
-    for (var typeSpecName in typeSpecs) {
-      if (has(typeSpecs, typeSpecName)) {
-        var error;
-        // Prop type validation may throw. In case they do, we don't want to
-        // fail the render phase where it didn't fail before. So we log it.
-        // After these have been cleaned up, we'll let them throw.
-        try {
-          // This is intentionally an invariant that gets caught. It's the same
-          // behavior as without this statement except with a better message.
-          if (typeof typeSpecs[typeSpecName] !== 'function') {
-            var err = Error(
-              (componentName || 'React class') + ': ' + location + ' type `' + typeSpecName + '` is invalid; ' +
-              'it must be a function, usually from the `prop-types` package, but received `' + typeof typeSpecs[typeSpecName] + '`.'
-            );
-            err.name = 'Invariant Violation';
-            throw err;
-          }
-          error = typeSpecs[typeSpecName](values, typeSpecName, componentName, location, null, ReactPropTypesSecret);
-        } catch (ex) {
-          error = ex;
-        }
-        if (error && !(error instanceof Error)) {
-          printWarning(
-            (componentName || 'React class') + ': type specification of ' +
-            location + ' `' + typeSpecName + '` is invalid; the type checker ' +
-            'function must return `null` or an `Error` but returned a ' + typeof error + '. ' +
-            'You may have forgotten to pass an argument to the type checker ' +
-            'creator (arrayOf, instanceOf, objectOf, oneOf, oneOfType, and ' +
-            'shape all require an argument).'
-          );
-        }
-        if (error instanceof Error && !(error.message in loggedTypeFailures)) {
-          // Only monitor this failure once because there tends to be a lot of the
-          // same error.
-          loggedTypeFailures[error.message] = true;
-
-          var stack = getStack ? getStack() : '';
-
-          printWarning(
-            'Failed ' + location + ' type: ' + error.message + (stack != null ? stack : '')
-          );
-        }
-      }
-    }
-  }
-}
-
-/**
- * Resets warning cache when testing.
- *
- * @private
- */
-checkPropTypes.resetWarningCache = function() {
-  if (true) {
-    loggedTypeFailures = {};
-  }
-}
-
-module.exports = checkPropTypes;
-
-
-/***/ }),
-
-/***/ "./node_modules/prop-types/factoryWithTypeCheckers.js":
-/*!************************************************************!*\
-  !*** ./node_modules/prop-types/factoryWithTypeCheckers.js ***!
-  \************************************************************/
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
-
-"use strict";
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
-
-
-
-var ReactIs = __webpack_require__(/*! react-is */ "./node_modules/react-is/index.js");
-var assign = __webpack_require__(/*! object-assign */ "./node_modules/object-assign/index.js");
-
-var ReactPropTypesSecret = __webpack_require__(/*! ./lib/ReactPropTypesSecret */ "./node_modules/prop-types/lib/ReactPropTypesSecret.js");
-var checkPropTypes = __webpack_require__(/*! ./checkPropTypes */ "./node_modules/prop-types/checkPropTypes.js");
-
-var has = Function.call.bind(Object.prototype.hasOwnProperty);
-var printWarning = function() {};
-
-if (true) {
-  printWarning = function(text) {
-    var message = 'Warning: ' + text;
-    if (typeof console !== 'undefined') {
-      console.error(message);
-    }
-    try {
-      // --- Welcome to debugging React ---
-      // This error was thrown as a convenience so that you can use this stack
-      // to find the callsite that caused this warning to fire.
-      throw new Error(message);
-    } catch (x) {}
-  };
-}
-
-function emptyFunctionThatReturnsNull() {
-  return null;
-}
-
-module.exports = function(isValidElement, throwOnDirectAccess) {
-  /* global Symbol */
-  var ITERATOR_SYMBOL = typeof Symbol === 'function' && Symbol.iterator;
-  var FAUX_ITERATOR_SYMBOL = '@@iterator'; // Before Symbol spec.
-
-  /**
-   * Returns the iterator method function contained on the iterable object.
-   *
-   * Be sure to invoke the function with the iterable as context:
-   *
-   *     var iteratorFn = getIteratorFn(myIterable);
-   *     if (iteratorFn) {
-   *       var iterator = iteratorFn.call(myIterable);
-   *       ...
-   *     }
-   *
-   * @param {?object} maybeIterable
-   * @return {?function}
-   */
-  function getIteratorFn(maybeIterable) {
-    var iteratorFn = maybeIterable && (ITERATOR_SYMBOL && maybeIterable[ITERATOR_SYMBOL] || maybeIterable[FAUX_ITERATOR_SYMBOL]);
-    if (typeof iteratorFn === 'function') {
-      return iteratorFn;
-    }
-  }
-
-  /**
-   * Collection of methods that allow declaration and validation of props that are
-   * supplied to React components. Example usage:
-   *
-   *   var Props = require('ReactPropTypes');
-   *   var MyArticle = React.createClass({
-   *     propTypes: {
-   *       // An optional string prop named "description".
-   *       description: Props.string,
-   *
-   *       // A required enum prop named "category".
-   *       category: Props.oneOf(['News','Photos']).isRequired,
-   *
-   *       // A prop named "dialog" that requires an instance of Dialog.
-   *       dialog: Props.instanceOf(Dialog).isRequired
-   *     },
-   *     render: function() { ... }
-   *   });
-   *
-   * A more formal specification of how these methods are used:
-   *
-   *   type := array|bool|func|object|number|string|oneOf([...])|instanceOf(...)
-   *   decl := ReactPropTypes.{type}(.isRequired)?
-   *
-   * Each and every declaration produces a function with the same signature. This
-   * allows the creation of custom validation functions. For example:
-   *
-   *  var MyLink = React.createClass({
-   *    propTypes: {
-   *      // An optional string or URI prop named "href".
-   *      href: function(props, propName, componentName) {
-   *        var propValue = props[propName];
-   *        if (propValue != null && typeof propValue !== 'string' &&
-   *            !(propValue instanceof URI)) {
-   *          return new Error(
-   *            'Expected a string or an URI for ' + propName + ' in ' +
-   *            componentName
-   *          );
-   *        }
-   *      }
-   *    },
-   *    render: function() {...}
-   *  });
-   *
-   * @internal
-   */
-
-  var ANONYMOUS = '<<anonymous>>';
-
-  // Important!
-  // Keep this list in sync with production version in `./factoryWithThrowingShims.js`.
-  var ReactPropTypes = {
-    array: createPrimitiveTypeChecker('array'),
-    bool: createPrimitiveTypeChecker('boolean'),
-    func: createPrimitiveTypeChecker('function'),
-    number: createPrimitiveTypeChecker('number'),
-    object: createPrimitiveTypeChecker('object'),
-    string: createPrimitiveTypeChecker('string'),
-    symbol: createPrimitiveTypeChecker('symbol'),
-
-    any: createAnyTypeChecker(),
-    arrayOf: createArrayOfTypeChecker,
-    element: createElementTypeChecker(),
-    elementType: createElementTypeTypeChecker(),
-    instanceOf: createInstanceTypeChecker,
-    node: createNodeChecker(),
-    objectOf: createObjectOfTypeChecker,
-    oneOf: createEnumTypeChecker,
-    oneOfType: createUnionTypeChecker,
-    shape: createShapeTypeChecker,
-    exact: createStrictShapeTypeChecker,
-  };
-
-  /**
-   * inlined Object.is polyfill to avoid requiring consumers ship their own
-   * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is
-   */
-  /*eslint-disable no-self-compare*/
-  function is(x, y) {
-    // SameValue algorithm
-    if (x === y) {
-      // Steps 1-5, 7-10
-      // Steps 6.b-6.e: +0 != -0
-      return x !== 0 || 1 / x === 1 / y;
-    } else {
-      // Step 6.a: NaN == NaN
-      return x !== x && y !== y;
-    }
-  }
-  /*eslint-enable no-self-compare*/
-
-  /**
-   * We use an Error-like object for backward compatibility as people may call
-   * PropTypes directly and inspect their output. However, we don't use real
-   * Errors anymore. We don't inspect their stack anyway, and creating them
-   * is prohibitively expensive if they are created too often, such as what
-   * happens in oneOfType() for any type before the one that matched.
-   */
-  function PropTypeError(message) {
-    this.message = message;
-    this.stack = '';
-  }
-  // Make `instanceof Error` still work for returned errors.
-  PropTypeError.prototype = Error.prototype;
-
-  function createChainableTypeChecker(validate) {
-    if (true) {
-      var manualPropTypeCallCache = {};
-      var manualPropTypeWarningCount = 0;
-    }
-    function checkType(isRequired, props, propName, componentName, location, propFullName, secret) {
-      componentName = componentName || ANONYMOUS;
-      propFullName = propFullName || propName;
-
-      if (secret !== ReactPropTypesSecret) {
-        if (throwOnDirectAccess) {
-          // New behavior only for users of `prop-types` package
-          var err = new Error(
-            'Calling PropTypes validators directly is not supported by the `prop-types` package. ' +
-            'Use `PropTypes.checkPropTypes()` to call them. ' +
-            'Read more at http://fb.me/use-check-prop-types'
-          );
-          err.name = 'Invariant Violation';
-          throw err;
-        } else if ( true && typeof console !== 'undefined') {
-          // Old behavior for people using React.PropTypes
-          var cacheKey = componentName + ':' + propName;
-          if (
-            !manualPropTypeCallCache[cacheKey] &&
-            // Avoid spamming the console because they are often not actionable except for lib authors
-            manualPropTypeWarningCount < 3
-          ) {
-            printWarning(
-              'You are manually calling a React.PropTypes validation ' +
-              'function for the `' + propFullName + '` prop on `' + componentName  + '`. This is deprecated ' +
-              'and will throw in the standalone `prop-types` package. ' +
-              'You may be seeing this warning due to a third-party PropTypes ' +
-              'library. See https://fb.me/react-warning-dont-call-proptypes ' + 'for details.'
-            );
-            manualPropTypeCallCache[cacheKey] = true;
-            manualPropTypeWarningCount++;
-          }
-        }
-      }
-      if (props[propName] == null) {
-        if (isRequired) {
-          if (props[propName] === null) {
-            return new PropTypeError('The ' + location + ' `' + propFullName + '` is marked as required ' + ('in `' + componentName + '`, but its value is `null`.'));
-          }
-          return new PropTypeError('The ' + location + ' `' + propFullName + '` is marked as required in ' + ('`' + componentName + '`, but its value is `undefined`.'));
-        }
-        return null;
-      } else {
-        return validate(props, propName, componentName, location, propFullName);
-      }
-    }
-
-    var chainedCheckType = checkType.bind(null, false);
-    chainedCheckType.isRequired = checkType.bind(null, true);
-
-    return chainedCheckType;
-  }
-
-  function createPrimitiveTypeChecker(expectedType) {
-    function validate(props, propName, componentName, location, propFullName, secret) {
-      var propValue = props[propName];
-      var propType = getPropType(propValue);
-      if (propType !== expectedType) {
-        // `propValue` being instance of, say, date/regexp, pass the 'object'
-        // check, but we can offer a more precise error message here rather than
-        // 'of type `object`'.
-        var preciseType = getPreciseType(propValue);
-
-        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + preciseType + '` supplied to `' + componentName + '`, expected ') + ('`' + expectedType + '`.'));
-      }
-      return null;
-    }
-    return createChainableTypeChecker(validate);
-  }
-
-  function createAnyTypeChecker() {
-    return createChainableTypeChecker(emptyFunctionThatReturnsNull);
-  }
-
-  function createArrayOfTypeChecker(typeChecker) {
-    function validate(props, propName, componentName, location, propFullName) {
-      if (typeof typeChecker !== 'function') {
-        return new PropTypeError('Property `' + propFullName + '` of component `' + componentName + '` has invalid PropType notation inside arrayOf.');
-      }
-      var propValue = props[propName];
-      if (!Array.isArray(propValue)) {
-        var propType = getPropType(propValue);
-        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + propType + '` supplied to `' + componentName + '`, expected an array.'));
-      }
-      for (var i = 0; i < propValue.length; i++) {
-        var error = typeChecker(propValue, i, componentName, location, propFullName + '[' + i + ']', ReactPropTypesSecret);
-        if (error instanceof Error) {
-          return error;
-        }
-      }
-      return null;
-    }
-    return createChainableTypeChecker(validate);
-  }
-
-  function createElementTypeChecker() {
-    function validate(props, propName, componentName, location, propFullName) {
-      var propValue = props[propName];
-      if (!isValidElement(propValue)) {
-        var propType = getPropType(propValue);
-        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + propType + '` supplied to `' + componentName + '`, expected a single ReactElement.'));
-      }
-      return null;
-    }
-    return createChainableTypeChecker(validate);
-  }
-
-  function createElementTypeTypeChecker() {
-    function validate(props, propName, componentName, location, propFullName) {
-      var propValue = props[propName];
-      if (!ReactIs.isValidElementType(propValue)) {
-        var propType = getPropType(propValue);
-        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + propType + '` supplied to `' + componentName + '`, expected a single ReactElement type.'));
-      }
-      return null;
-    }
-    return createChainableTypeChecker(validate);
-  }
-
-  function createInstanceTypeChecker(expectedClass) {
-    function validate(props, propName, componentName, location, propFullName) {
-      if (!(props[propName] instanceof expectedClass)) {
-        var expectedClassName = expectedClass.name || ANONYMOUS;
-        var actualClassName = getClassName(props[propName]);
-        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + actualClassName + '` supplied to `' + componentName + '`, expected ') + ('instance of `' + expectedClassName + '`.'));
-      }
-      return null;
-    }
-    return createChainableTypeChecker(validate);
-  }
-
-  function createEnumTypeChecker(expectedValues) {
-    if (!Array.isArray(expectedValues)) {
-      if (true) {
-        if (arguments.length > 1) {
-          printWarning(
-            'Invalid arguments supplied to oneOf, expected an array, got ' + arguments.length + ' arguments. ' +
-            'A common mistake is to write oneOf(x, y, z) instead of oneOf([x, y, z]).'
-          );
-        } else {
-          printWarning('Invalid argument supplied to oneOf, expected an array.');
-        }
-      }
-      return emptyFunctionThatReturnsNull;
-    }
-
-    function validate(props, propName, componentName, location, propFullName) {
-      var propValue = props[propName];
-      for (var i = 0; i < expectedValues.length; i++) {
-        if (is(propValue, expectedValues[i])) {
-          return null;
-        }
-      }
-
-      var valuesString = JSON.stringify(expectedValues, function replacer(key, value) {
-        var type = getPreciseType(value);
-        if (type === 'symbol') {
-          return String(value);
-        }
-        return value;
-      });
-      return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of value `' + String(propValue) + '` ' + ('supplied to `' + componentName + '`, expected one of ' + valuesString + '.'));
-    }
-    return createChainableTypeChecker(validate);
-  }
-
-  function createObjectOfTypeChecker(typeChecker) {
-    function validate(props, propName, componentName, location, propFullName) {
-      if (typeof typeChecker !== 'function') {
-        return new PropTypeError('Property `' + propFullName + '` of component `' + componentName + '` has invalid PropType notation inside objectOf.');
-      }
-      var propValue = props[propName];
-      var propType = getPropType(propValue);
-      if (propType !== 'object') {
-        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + propType + '` supplied to `' + componentName + '`, expected an object.'));
-      }
-      for (var key in propValue) {
-        if (has(propValue, key)) {
-          var error = typeChecker(propValue, key, componentName, location, propFullName + '.' + key, ReactPropTypesSecret);
-          if (error instanceof Error) {
-            return error;
-          }
-        }
-      }
-      return null;
-    }
-    return createChainableTypeChecker(validate);
-  }
-
-  function createUnionTypeChecker(arrayOfTypeCheckers) {
-    if (!Array.isArray(arrayOfTypeCheckers)) {
-       true ? printWarning('Invalid argument supplied to oneOfType, expected an instance of array.') : 0;
-      return emptyFunctionThatReturnsNull;
-    }
-
-    for (var i = 0; i < arrayOfTypeCheckers.length; i++) {
-      var checker = arrayOfTypeCheckers[i];
-      if (typeof checker !== 'function') {
-        printWarning(
-          'Invalid argument supplied to oneOfType. Expected an array of check functions, but ' +
-          'received ' + getPostfixForTypeWarning(checker) + ' at index ' + i + '.'
-        );
-        return emptyFunctionThatReturnsNull;
-      }
-    }
-
-    function validate(props, propName, componentName, location, propFullName) {
-      for (var i = 0; i < arrayOfTypeCheckers.length; i++) {
-        var checker = arrayOfTypeCheckers[i];
-        if (checker(props, propName, componentName, location, propFullName, ReactPropTypesSecret) == null) {
-          return null;
-        }
-      }
-
-      return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` supplied to ' + ('`' + componentName + '`.'));
-    }
-    return createChainableTypeChecker(validate);
-  }
-
-  function createNodeChecker() {
-    function validate(props, propName, componentName, location, propFullName) {
-      if (!isNode(props[propName])) {
-        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` supplied to ' + ('`' + componentName + '`, expected a ReactNode.'));
-      }
-      return null;
-    }
-    return createChainableTypeChecker(validate);
-  }
-
-  function createShapeTypeChecker(shapeTypes) {
-    function validate(props, propName, componentName, location, propFullName) {
-      var propValue = props[propName];
-      var propType = getPropType(propValue);
-      if (propType !== 'object') {
-        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type `' + propType + '` ' + ('supplied to `' + componentName + '`, expected `object`.'));
-      }
-      for (var key in shapeTypes) {
-        var checker = shapeTypes[key];
-        if (!checker) {
-          continue;
-        }
-        var error = checker(propValue, key, componentName, location, propFullName + '.' + key, ReactPropTypesSecret);
-        if (error) {
-          return error;
-        }
-      }
-      return null;
-    }
-    return createChainableTypeChecker(validate);
-  }
-
-  function createStrictShapeTypeChecker(shapeTypes) {
-    function validate(props, propName, componentName, location, propFullName) {
-      var propValue = props[propName];
-      var propType = getPropType(propValue);
-      if (propType !== 'object') {
-        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type `' + propType + '` ' + ('supplied to `' + componentName + '`, expected `object`.'));
-      }
-      // We need to check all keys in case some are required but missing from
-      // props.
-      var allKeys = assign({}, props[propName], shapeTypes);
-      for (var key in allKeys) {
-        var checker = shapeTypes[key];
-        if (!checker) {
-          return new PropTypeError(
-            'Invalid ' + location + ' `' + propFullName + '` key `' + key + '` supplied to `' + componentName + '`.' +
-            '\nBad object: ' + JSON.stringify(props[propName], null, '  ') +
-            '\nValid keys: ' +  JSON.stringify(Object.keys(shapeTypes), null, '  ')
-          );
-        }
-        var error = checker(propValue, key, componentName, location, propFullName + '.' + key, ReactPropTypesSecret);
-        if (error) {
-          return error;
-        }
-      }
-      return null;
-    }
-
-    return createChainableTypeChecker(validate);
-  }
-
-  function isNode(propValue) {
-    switch (typeof propValue) {
-      case 'number':
-      case 'string':
-      case 'undefined':
-        return true;
-      case 'boolean':
-        return !propValue;
-      case 'object':
-        if (Array.isArray(propValue)) {
-          return propValue.every(isNode);
-        }
-        if (propValue === null || isValidElement(propValue)) {
-          return true;
-        }
-
-        var iteratorFn = getIteratorFn(propValue);
-        if (iteratorFn) {
-          var iterator = iteratorFn.call(propValue);
-          var step;
-          if (iteratorFn !== propValue.entries) {
-            while (!(step = iterator.next()).done) {
-              if (!isNode(step.value)) {
-                return false;
-              }
-            }
-          } else {
-            // Iterator will provide entry [k,v] tuples rather than values.
-            while (!(step = iterator.next()).done) {
-              var entry = step.value;
-              if (entry) {
-                if (!isNode(entry[1])) {
-                  return false;
-                }
-              }
-            }
-          }
-        } else {
-          return false;
-        }
-
-        return true;
-      default:
-        return false;
-    }
-  }
-
-  function isSymbol(propType, propValue) {
-    // Native Symbol.
-    if (propType === 'symbol') {
-      return true;
-    }
-
-    // falsy value can't be a Symbol
-    if (!propValue) {
-      return false;
-    }
-
-    // 19.4.3.5 Symbol.prototype[@@toStringTag] === 'Symbol'
-    if (propValue['@@toStringTag'] === 'Symbol') {
-      return true;
-    }
-
-    // Fallback for non-spec compliant Symbols which are polyfilled.
-    if (typeof Symbol === 'function' && propValue instanceof Symbol) {
-      return true;
-    }
-
-    return false;
-  }
-
-  // Equivalent of `typeof` but with special handling for array and regexp.
-  function getPropType(propValue) {
-    var propType = typeof propValue;
-    if (Array.isArray(propValue)) {
-      return 'array';
-    }
-    if (propValue instanceof RegExp) {
-      // Old webkits (at least until Android 4.0) return 'function' rather than
-      // 'object' for typeof a RegExp. We'll normalize this here so that /bla/
-      // passes PropTypes.object.
-      return 'object';
-    }
-    if (isSymbol(propType, propValue)) {
-      return 'symbol';
-    }
-    return propType;
-  }
-
-  // This handles more types than `getPropType`. Only used for error messages.
-  // See `createPrimitiveTypeChecker`.
-  function getPreciseType(propValue) {
-    if (typeof propValue === 'undefined' || propValue === null) {
-      return '' + propValue;
-    }
-    var propType = getPropType(propValue);
-    if (propType === 'object') {
-      if (propValue instanceof Date) {
-        return 'date';
-      } else if (propValue instanceof RegExp) {
-        return 'regexp';
-      }
-    }
-    return propType;
-  }
-
-  // Returns a string that is postfixed to a warning about an invalid type.
-  // For example, "undefined" or "of type array"
-  function getPostfixForTypeWarning(value) {
-    var type = getPreciseType(value);
-    switch (type) {
-      case 'array':
-      case 'object':
-        return 'an ' + type;
-      case 'boolean':
-      case 'date':
-      case 'regexp':
-        return 'a ' + type;
-      default:
-        return type;
-    }
-  }
-
-  // Returns class name of the object, if any.
-  function getClassName(propValue) {
-    if (!propValue.constructor || !propValue.constructor.name) {
-      return ANONYMOUS;
-    }
-    return propValue.constructor.name;
-  }
-
-  ReactPropTypes.checkPropTypes = checkPropTypes;
-  ReactPropTypes.resetWarningCache = checkPropTypes.resetWarningCache;
-  ReactPropTypes.PropTypes = ReactPropTypes;
-
-  return ReactPropTypes;
-};
-
-
-/***/ }),
-
-/***/ "./node_modules/prop-types/index.js":
-/*!******************************************!*\
-  !*** ./node_modules/prop-types/index.js ***!
-  \******************************************/
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
-
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
-
-if (true) {
-  var ReactIs = __webpack_require__(/*! react-is */ "./node_modules/react-is/index.js");
-
-  // By explicitly using `prop-types` you are opting into new development behavior.
-  // http://fb.me/prop-types-in-prod
-  var throwOnDirectAccess = true;
-  module.exports = __webpack_require__(/*! ./factoryWithTypeCheckers */ "./node_modules/prop-types/factoryWithTypeCheckers.js")(ReactIs.isElement, throwOnDirectAccess);
-} else {}
-
-
-/***/ }),
-
-/***/ "./node_modules/prop-types/lib/ReactPropTypesSecret.js":
-/*!*************************************************************!*\
-  !*** ./node_modules/prop-types/lib/ReactPropTypesSecret.js ***!
-  \*************************************************************/
-/***/ ((module) => {
-
-"use strict";
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
-
-
-
-var ReactPropTypesSecret = 'SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED';
-
-module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
@@ -46766,2078 +46852,6 @@ if (false) {} else {
 
 /***/ }),
 
-/***/ "./node_modules/react-is/cjs/react-is.development.js":
-/*!***********************************************************!*\
-  !*** ./node_modules/react-is/cjs/react-is.development.js ***!
-  \***********************************************************/
-/***/ ((__unused_webpack_module, exports) => {
-
-"use strict";
-/** @license React v16.13.1
- * react-is.development.js
- *
- * Copyright (c) Facebook, Inc. and its affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
-
-
-
-
-
-if (true) {
-  (function() {
-'use strict';
-
-// The Symbol used to tag the ReactElement-like types. If there is no native Symbol
-// nor polyfill, then a plain number is used for performance.
-var hasSymbol = typeof Symbol === 'function' && Symbol.for;
-var REACT_ELEMENT_TYPE = hasSymbol ? Symbol.for('react.element') : 0xeac7;
-var REACT_PORTAL_TYPE = hasSymbol ? Symbol.for('react.portal') : 0xeaca;
-var REACT_FRAGMENT_TYPE = hasSymbol ? Symbol.for('react.fragment') : 0xeacb;
-var REACT_STRICT_MODE_TYPE = hasSymbol ? Symbol.for('react.strict_mode') : 0xeacc;
-var REACT_PROFILER_TYPE = hasSymbol ? Symbol.for('react.profiler') : 0xead2;
-var REACT_PROVIDER_TYPE = hasSymbol ? Symbol.for('react.provider') : 0xeacd;
-var REACT_CONTEXT_TYPE = hasSymbol ? Symbol.for('react.context') : 0xeace; // TODO: We don't use AsyncMode or ConcurrentMode anymore. They were temporary
-// (unstable) APIs that have been removed. Can we remove the symbols?
-
-var REACT_ASYNC_MODE_TYPE = hasSymbol ? Symbol.for('react.async_mode') : 0xeacf;
-var REACT_CONCURRENT_MODE_TYPE = hasSymbol ? Symbol.for('react.concurrent_mode') : 0xeacf;
-var REACT_FORWARD_REF_TYPE = hasSymbol ? Symbol.for('react.forward_ref') : 0xead0;
-var REACT_SUSPENSE_TYPE = hasSymbol ? Symbol.for('react.suspense') : 0xead1;
-var REACT_SUSPENSE_LIST_TYPE = hasSymbol ? Symbol.for('react.suspense_list') : 0xead8;
-var REACT_MEMO_TYPE = hasSymbol ? Symbol.for('react.memo') : 0xead3;
-var REACT_LAZY_TYPE = hasSymbol ? Symbol.for('react.lazy') : 0xead4;
-var REACT_BLOCK_TYPE = hasSymbol ? Symbol.for('react.block') : 0xead9;
-var REACT_FUNDAMENTAL_TYPE = hasSymbol ? Symbol.for('react.fundamental') : 0xead5;
-var REACT_RESPONDER_TYPE = hasSymbol ? Symbol.for('react.responder') : 0xead6;
-var REACT_SCOPE_TYPE = hasSymbol ? Symbol.for('react.scope') : 0xead7;
-
-function isValidElementType(type) {
-  return typeof type === 'string' || typeof type === 'function' || // Note: its typeof might be other than 'symbol' or 'number' if it's a polyfill.
-  type === REACT_FRAGMENT_TYPE || type === REACT_CONCURRENT_MODE_TYPE || type === REACT_PROFILER_TYPE || type === REACT_STRICT_MODE_TYPE || type === REACT_SUSPENSE_TYPE || type === REACT_SUSPENSE_LIST_TYPE || typeof type === 'object' && type !== null && (type.$$typeof === REACT_LAZY_TYPE || type.$$typeof === REACT_MEMO_TYPE || type.$$typeof === REACT_PROVIDER_TYPE || type.$$typeof === REACT_CONTEXT_TYPE || type.$$typeof === REACT_FORWARD_REF_TYPE || type.$$typeof === REACT_FUNDAMENTAL_TYPE || type.$$typeof === REACT_RESPONDER_TYPE || type.$$typeof === REACT_SCOPE_TYPE || type.$$typeof === REACT_BLOCK_TYPE);
-}
-
-function typeOf(object) {
-  if (typeof object === 'object' && object !== null) {
-    var $$typeof = object.$$typeof;
-
-    switch ($$typeof) {
-      case REACT_ELEMENT_TYPE:
-        var type = object.type;
-
-        switch (type) {
-          case REACT_ASYNC_MODE_TYPE:
-          case REACT_CONCURRENT_MODE_TYPE:
-          case REACT_FRAGMENT_TYPE:
-          case REACT_PROFILER_TYPE:
-          case REACT_STRICT_MODE_TYPE:
-          case REACT_SUSPENSE_TYPE:
-            return type;
-
-          default:
-            var $$typeofType = type && type.$$typeof;
-
-            switch ($$typeofType) {
-              case REACT_CONTEXT_TYPE:
-              case REACT_FORWARD_REF_TYPE:
-              case REACT_LAZY_TYPE:
-              case REACT_MEMO_TYPE:
-              case REACT_PROVIDER_TYPE:
-                return $$typeofType;
-
-              default:
-                return $$typeof;
-            }
-
-        }
-
-      case REACT_PORTAL_TYPE:
-        return $$typeof;
-    }
-  }
-
-  return undefined;
-} // AsyncMode is deprecated along with isAsyncMode
-
-var AsyncMode = REACT_ASYNC_MODE_TYPE;
-var ConcurrentMode = REACT_CONCURRENT_MODE_TYPE;
-var ContextConsumer = REACT_CONTEXT_TYPE;
-var ContextProvider = REACT_PROVIDER_TYPE;
-var Element = REACT_ELEMENT_TYPE;
-var ForwardRef = REACT_FORWARD_REF_TYPE;
-var Fragment = REACT_FRAGMENT_TYPE;
-var Lazy = REACT_LAZY_TYPE;
-var Memo = REACT_MEMO_TYPE;
-var Portal = REACT_PORTAL_TYPE;
-var Profiler = REACT_PROFILER_TYPE;
-var StrictMode = REACT_STRICT_MODE_TYPE;
-var Suspense = REACT_SUSPENSE_TYPE;
-var hasWarnedAboutDeprecatedIsAsyncMode = false; // AsyncMode should be deprecated
-
-function isAsyncMode(object) {
-  {
-    if (!hasWarnedAboutDeprecatedIsAsyncMode) {
-      hasWarnedAboutDeprecatedIsAsyncMode = true; // Using console['warn'] to evade Babel and ESLint
-
-      console['warn']('The ReactIs.isAsyncMode() alias has been deprecated, ' + 'and will be removed in React 17+. Update your code to use ' + 'ReactIs.isConcurrentMode() instead. It has the exact same API.');
-    }
-  }
-
-  return isConcurrentMode(object) || typeOf(object) === REACT_ASYNC_MODE_TYPE;
-}
-function isConcurrentMode(object) {
-  return typeOf(object) === REACT_CONCURRENT_MODE_TYPE;
-}
-function isContextConsumer(object) {
-  return typeOf(object) === REACT_CONTEXT_TYPE;
-}
-function isContextProvider(object) {
-  return typeOf(object) === REACT_PROVIDER_TYPE;
-}
-function isElement(object) {
-  return typeof object === 'object' && object !== null && object.$$typeof === REACT_ELEMENT_TYPE;
-}
-function isForwardRef(object) {
-  return typeOf(object) === REACT_FORWARD_REF_TYPE;
-}
-function isFragment(object) {
-  return typeOf(object) === REACT_FRAGMENT_TYPE;
-}
-function isLazy(object) {
-  return typeOf(object) === REACT_LAZY_TYPE;
-}
-function isMemo(object) {
-  return typeOf(object) === REACT_MEMO_TYPE;
-}
-function isPortal(object) {
-  return typeOf(object) === REACT_PORTAL_TYPE;
-}
-function isProfiler(object) {
-  return typeOf(object) === REACT_PROFILER_TYPE;
-}
-function isStrictMode(object) {
-  return typeOf(object) === REACT_STRICT_MODE_TYPE;
-}
-function isSuspense(object) {
-  return typeOf(object) === REACT_SUSPENSE_TYPE;
-}
-
-exports.AsyncMode = AsyncMode;
-exports.ConcurrentMode = ConcurrentMode;
-exports.ContextConsumer = ContextConsumer;
-exports.ContextProvider = ContextProvider;
-exports.Element = Element;
-exports.ForwardRef = ForwardRef;
-exports.Fragment = Fragment;
-exports.Lazy = Lazy;
-exports.Memo = Memo;
-exports.Portal = Portal;
-exports.Profiler = Profiler;
-exports.StrictMode = StrictMode;
-exports.Suspense = Suspense;
-exports.isAsyncMode = isAsyncMode;
-exports.isConcurrentMode = isConcurrentMode;
-exports.isContextConsumer = isContextConsumer;
-exports.isContextProvider = isContextProvider;
-exports.isElement = isElement;
-exports.isForwardRef = isForwardRef;
-exports.isFragment = isFragment;
-exports.isLazy = isLazy;
-exports.isMemo = isMemo;
-exports.isPortal = isPortal;
-exports.isProfiler = isProfiler;
-exports.isStrictMode = isStrictMode;
-exports.isSuspense = isSuspense;
-exports.isValidElementType = isValidElementType;
-exports.typeOf = typeOf;
-  })();
-}
-
-
-/***/ }),
-
-/***/ "./node_modules/react-is/index.js":
-/*!****************************************!*\
-  !*** ./node_modules/react-is/index.js ***!
-  \****************************************/
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
-
-"use strict";
-
-
-if (false) {} else {
-  module.exports = __webpack_require__(/*! ./cjs/react-is.development.js */ "./node_modules/react-is/cjs/react-is.development.js");
-}
-
-
-/***/ }),
-
-/***/ "./node_modules/react-stripe-checkout/dist/main.js":
-/*!*********************************************************!*\
-  !*** ./node_modules/react-stripe-checkout/dist/main.js ***!
-  \*********************************************************/
-/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", ({
-  value: true
-}));
-
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-
-var _react2 = _interopRequireDefault(_react);
-
-var _propTypes = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
-
-var _propTypes2 = _interopRequireDefault(_propTypes);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var scriptLoading = false;
-var scriptLoaded = false;
-var scriptDidError = false;
-
-var ReactStripeCheckout = function (_React$Component) {
-  _inherits(ReactStripeCheckout, _React$Component);
-
-  function ReactStripeCheckout(props) {
-    _classCallCheck(this, ReactStripeCheckout);
-
-    var _this = _possibleConstructorReturn(this, (ReactStripeCheckout.__proto__ || Object.getPrototypeOf(ReactStripeCheckout)).call(this, props));
-
-    _this.onScriptLoaded = function () {
-      if (!ReactStripeCheckout.stripeHandler) {
-        ReactStripeCheckout.stripeHandler = StripeCheckout.configure({
-          key: _this.props.stripeKey
-        });
-        if (_this.hasPendingClick) {
-          _this.showStripeDialog();
-        }
-      }
-    };
-
-    _this.onScriptError = function () {
-      for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-        args[_key] = arguments[_key];
-      }
-
-      _this.hideLoadingDialog();
-      if (_this.props.onScriptError) {
-        _this.props.onScriptError.apply(_this, args);
-      }
-    };
-
-    _this.onClosed = function () {
-      for (var _len2 = arguments.length, args = Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
-        args[_key2] = arguments[_key2];
-      }
-
-      if (_this._isMounted) _this.setState({ open: false });
-      if (_this.props.closed) {
-        _this.props.closed.apply(_this, args);
-      }
-    };
-
-    _this.onOpened = function () {
-      for (var _len3 = arguments.length, args = Array(_len3), _key3 = 0; _key3 < _len3; _key3++) {
-        args[_key3] = arguments[_key3];
-      }
-
-      _this.setState({ open: true });
-      if (_this.props.opened) {
-        _this.props.opened.apply(_this, args);
-      }
-    };
-
-    _this.getConfig = function () {
-      return ['token', 'image', 'name', 'description', 'amount', 'locale', 'currency', 'panelLabel', 'zipCode', 'shippingAddress', 'billingAddress', 'email', 'allowRememberMe', 'bitcoin', 'alipay', 'alipayReusable'].reduce(function (config, key) {
-        return _extends({}, config, _this.props.hasOwnProperty(key) && _defineProperty({}, key, _this.props[key]));
-      }, {
-        opened: _this.onOpened,
-        closed: _this.onClosed
-      });
-    };
-
-    _this.onClick = function () {
-      // eslint-disable-line react/sort-comp
-      if (_this.props.disabled) {
-        return;
-      }
-
-      if (scriptDidError) {
-        try {
-          throw new Error('Tried to call onClick, but StripeCheckout failed to load');
-        } catch (x) {} // eslint-disable-line no-empty
-      } else if (ReactStripeCheckout.stripeHandler) {
-        _this.showStripeDialog();
-      } else {
-        _this.showLoadingDialog();
-        _this.hasPendingClick = true;
-      }
-    };
-
-    _this.handleOnMouseDown = function () {
-      _this.setState({
-        buttonActive: true
-      });
-    };
-
-    _this.handleOnMouseUp = function () {
-      _this.setState({
-        buttonActive: false
-      });
-    };
-
-    _this.state = {
-      open: false,
-      buttonActive: false
-    };
-    return _this;
-  }
-
-  _createClass(ReactStripeCheckout, [{
-    key: 'componentDidMount',
-    value: function componentDidMount() {
-      var _this2 = this;
-
-      this._isMounted = true;
-      if (scriptLoaded) {
-        return;
-      }
-
-      if (scriptLoading) {
-        return;
-      }
-
-      scriptLoading = true;
-
-      var script = document.createElement('script');
-      if (typeof this.props.onScriptTagCreated === 'function') {
-        this.props.onScriptTagCreated(script);
-      }
-
-      script.src = 'https://checkout.stripe.com/checkout.js';
-      script.async = 1;
-
-      this.loadPromise = function () {
-        var canceled = false;
-        var promise = new Promise(function (resolve, reject) {
-          script.onload = function () {
-            scriptLoaded = true;
-            scriptLoading = false;
-            resolve();
-            _this2.onScriptLoaded();
-          };
-          script.onerror = function (event) {
-            scriptDidError = true;
-            scriptLoading = false;
-            reject(event);
-            _this2.onScriptError(event);
-          };
-        });
-        var wrappedPromise = new Promise(function (accept, cancel) {
-          promise.then(function () {
-            return canceled ? cancel({ isCanceled: true }) : accept();
-          }); // eslint-disable-line no-confusing-arrow
-          promise.catch(function (error) {
-            return canceled ? cancel({ isCanceled: true }) : cancel(error);
-          }); // eslint-disable-line no-confusing-arrow
-        });
-
-        return {
-          promise: wrappedPromise,
-          cancel: function cancel() {
-            canceled = true;
-          }
-        };
-      }();
-
-      this.loadPromise.promise.then(this.onScriptLoaded).catch(this.onScriptError);
-
-      document.body.appendChild(script);
-    }
-  }, {
-    key: 'componentDidUpdate',
-    value: function componentDidUpdate() {
-      if (!scriptLoading) {
-        this.updateStripeHandler();
-      }
-    }
-  }, {
-    key: 'componentWillUnmount',
-    value: function componentWillUnmount() {
-      this._isMounted = false;
-      if (this.loadPromise) {
-        this.loadPromise.cancel();
-      }
-      if (ReactStripeCheckout.stripeHandler && this.state.open) {
-        ReactStripeCheckout.stripeHandler.close();
-      }
-    }
-  }, {
-    key: 'updateStripeHandler',
-    value: function updateStripeHandler() {
-      if (!ReactStripeCheckout.stripeHandler || this.props.reconfigureOnUpdate) {
-        ReactStripeCheckout.stripeHandler = StripeCheckout.configure({
-          key: this.props.stripeKey
-        });
-      }
-    }
-  }, {
-    key: 'showLoadingDialog',
-    value: function showLoadingDialog() {
-      if (this.props.showLoadingDialog) {
-        for (var _len4 = arguments.length, args = Array(_len4), _key4 = 0; _key4 < _len4; _key4++) {
-          args[_key4] = arguments[_key4];
-        }
-
-        this.props.showLoadingDialog.apply(this, args);
-      }
-    }
-  }, {
-    key: 'hideLoadingDialog',
-    value: function hideLoadingDialog() {
-      if (this.props.hideLoadingDialog) {
-        for (var _len5 = arguments.length, args = Array(_len5), _key5 = 0; _key5 < _len5; _key5++) {
-          args[_key5] = arguments[_key5];
-        }
-
-        this.props.hideLoadingDialog.apply(this, args);
-      }
-    }
-  }, {
-    key: 'showStripeDialog',
-    value: function showStripeDialog() {
-      this.hideLoadingDialog();
-      ReactStripeCheckout.stripeHandler.open(this.getConfig());
-    }
-  }, {
-    key: 'renderDefaultStripeButton',
-    value: function renderDefaultStripeButton() {
-      return _react2.default.createElement(
-        'button',
-        _extends({}, _defineProperty({}, this.props.triggerEvent, this.onClick), {
-          className: this.props.className,
-          onMouseDown: this.handleOnMouseDown,
-          onFocus: this.handleOnMouseDown,
-          onMouseUp: this.handleOnMouseUp,
-          onMouseOut: this.handleOnMouseUp,
-          onBlur: this.handleOnMouseUp,
-          style: _extends({}, {
-            overflow: 'hidden',
-            display: 'inline-block',
-            background: 'linear-gradient(#28a0e5,#015e94)',
-            border: 0,
-            padding: 1,
-            textDecoration: 'none',
-            borderRadius: 5,
-            boxShadow: '0 1px 0 rgba(0,0,0,0.2)',
-            cursor: 'pointer',
-            visibility: 'visible',
-            userSelect: 'none'
-          }, this.state.buttonActive && {
-            background: '#005d93'
-          }, this.props.style)
-        }),
-        _react2.default.createElement(
-          'span',
-          {
-            style: _extends({}, {
-              backgroundImage: 'linear-gradient(#7dc5ee,#008cdd 85%,#30a2e4)',
-              fontFamily: '"Helvetica Neue",Helvetica,Arial,sans-serif',
-              fontSize: 14,
-              position: 'relative',
-              padding: '0 12px',
-              display: 'block',
-              height: 30,
-              lineHeight: '30px',
-              color: '#fff',
-              fontWeight: 'bold',
-              boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.25)',
-              textShadow: '0 -1px 0 rgba(0,0,0,0.25)',
-              borderRadius: 4
-            }, this.state.buttonActive && {
-              color: '#eee',
-              boxShadow: 'inset 0 1px 0 rgba(0,0,0,0.1)',
-              backgroundImage: 'linear-gradient(#008cdd,#008cdd 85%,#239adf)'
-            }, this.props.textStyle)
-          },
-          this.props.label
-        )
-      );
-    }
-  }, {
-    key: 'renderDisabledButton',
-    value: function renderDisabledButton() {
-      return _react2.default.createElement(
-        'button',
-        {
-          disabled: true,
-          style: {
-            background: 'rgba(0,0,0,0.2)',
-            overflow: 'hidden',
-            display: 'inline-block',
-            border: 0,
-            padding: 1,
-            textDecoration: 'none',
-            borderRadius: 5,
-            userSelect: 'none'
-          }
-        },
-        _react2.default.createElement(
-          'span',
-          {
-            style: {
-              boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.25)',
-              fontFamily: '"Helvetica Neue",Helvetica,Arial,sans-serif',
-              fontSize: 14,
-              position: 'relative',
-              padding: '0 12px',
-              display: 'block',
-              height: 30,
-              lineHeight: '30px',
-              borderRadius: 4,
-              color: '#999',
-              background: '#f8f9fa',
-              textShadow: '0 1px 0 rgba(255,255,255,0.5)'
-            }
-          },
-          this.props.label
-        )
-      );
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      if (this.props.desktopShowModal === true && !this.state.open) {
-        this.onClick();
-      } else if (this.props.desktopShowModal === false && this.state.open) {
-        ReactStripeCheckout.stripeHandler.close();
-      }
-
-      var ComponentClass = this.props.ComponentClass;
-
-      if (this.props.children) {
-        return _react2.default.createElement(ComponentClass, _extends({}, _defineProperty({}, this.props.triggerEvent, this.onClick), {
-          children: this.props.children
-        }));
-      }
-      return this.props.disabled ? this.renderDisabledButton() : this.renderDefaultStripeButton();
-    }
-  }]);
-
-  return ReactStripeCheckout;
-}(_react2.default.Component);
-
-ReactStripeCheckout.defaultProps = {
-  className: 'StripeCheckout',
-  label: 'Pay With Card',
-  locale: 'auto',
-  ComponentClass: 'span',
-  reconfigureOnUpdate: false,
-  triggerEvent: 'onClick'
-};
-ReactStripeCheckout.propTypes = {
-  // Opens / closes the checkout modal by value
-  // WARNING: does not work on mobile due to browser security restrictions
-  // NOTE: Must be set to false when receiving token to prevent modal from
-  //       opening automatically after closing
-  desktopShowModal: _propTypes2.default.bool,
-
-  triggerEvent: _propTypes2.default.oneOf(['onClick', 'onTouchTap', 'onTouchStart']),
-
-  // If included, will render the default blue button with label text.
-  // (Requires including stripe-checkout.css or adding the .styl file
-  // to your pipeline)
-  label: _propTypes2.default.string,
-
-  // Custom styling for default button
-  style: _propTypes2.default.object,
-  // Custom styling for <span> tag inside default button
-  textStyle: _propTypes2.default.object,
-
-  // Prevents any events from opening the popup
-  // Adds the disabled prop to the button and adjusts the styling as well
-  disabled: _propTypes2.default.bool,
-
-  // Named component to wrap button (eg. div)
-  ComponentClass: _propTypes2.default.string,
-
-  // Show a loading indicator
-  showLoadingDialog: _propTypes2.default.func,
-  // Hide the loading indicator
-  hideLoadingDialog: _propTypes2.default.func,
-
-  // Run this method when the scrupt fails to load. Will run if the internet
-  // connection is offline when attemting to load the script.
-  onScriptError: _propTypes2.default.func,
-
-  // Runs when the script tag is created, but before it is added to the DOM
-  onScriptTagCreated: _propTypes2.default.func,
-
-  // By default, any time the React component is updated, it will call
-  // StripeCheckout.configure, which may result in additional XHR calls to the
-  // stripe API.  If you know the first configuration is all you need, you
-  // can set this to false.  Subsequent updates will affect the StripeCheckout.open
-  // (e.g. different prices)
-  reconfigureOnUpdate: _propTypes2.default.bool,
-
-  // =====================================================
-  // Required by stripe
-  // see Stripe docs for more info:
-  //   https://stripe.com/docs/checkout#integration-custom
-  // =====================================================
-
-  // Your publishable key (test or live).
-  // can't use "key" as a prop in react, so have to change the keyname
-  stripeKey: _propTypes2.default.string.isRequired,
-
-  // The callback to invoke when the Checkout process is complete.
-  //   function(token)
-  //     token is the token object created.
-  //     token.id can be used to create a charge or customer.
-  //     token.email contains the email address entered by the user.
-  token: _propTypes2.default.func.isRequired,
-
-  // ==========================
-  // Highly Recommended Options
-  // ==========================
-
-  // Name of the company or website.
-  name: _propTypes2.default.string,
-
-  // A description of the product or service being purchased.
-  description: _propTypes2.default.string,
-
-  // A relative URL pointing to a square image of your brand or product. The
-  // recommended minimum size is 128x128px. The recommended image types are
-  // .gif, .jpeg, and .png.
-  image: _propTypes2.default.string,
-
-  // The amount (in cents) that's shown to the user. Note that you will still
-  // have to explicitly include it when you create a charge using the API.
-  amount: _propTypes2.default.number,
-
-  // Specify auto to display Checkout in the user's preferred language, if
-  // available. English will be used by default.
-  //
-  // https://stripe.com/docs/checkout#supported-languages
-  // for more info.
-  locale: _propTypes2.default.oneOf(['auto', // (Default) Automatically chosen by checkout
-  'zh', // Simplified Chinese
-  'da', // Danish
-  'nl', // Dutch
-  'en', // English
-  'fr', // French
-  'de', // German
-  'it', // Italian
-  'ja', // Japanease
-  'no', // Norwegian
-  'es', // Spanish
-  'sv']),
-
-  // ==============
-  // Optional Props
-  // ==============
-
-  // The currency of the amount (3-letter ISO code). The default is USD.
-  currency: _propTypes2.default.oneOf(['AED', 'AFN', 'ALL', 'AMD', 'ANG', 'AOA', 'ARS', 'AUD', 'AWG', 'AZN', 'BAM', 'BBD', // eslint-disable-line comma-spacing
-  'BDT', 'BGN', 'BIF', 'BMD', 'BND', 'BOB', 'BRL', 'BSD', 'BWP', 'BZD', 'CAD', 'CDF', // eslint-disable-line comma-spacing
-  'CHF', 'CLP', 'CNY', 'COP', 'CRC', 'CVE', 'CZK', 'DJF', 'DKK', 'DOP', 'DZD', 'EEK', // eslint-disable-line comma-spacing
-  'EGP', 'ETB', 'EUR', 'FJD', 'FKP', 'GBP', 'GEL', 'GIP', 'GMD', 'GNF', 'GTQ', 'GYD', // eslint-disable-line comma-spacing
-  'HKD', 'HNL', 'HRK', 'HTG', 'HUF', 'IDR', 'ILS', 'INR', 'ISK', 'JMD', 'JPY', 'KES', // eslint-disable-line comma-spacing
-  'KGS', 'KHR', 'KMF', 'KRW', 'KYD', 'KZT', 'LAK', 'LBP', 'LKR', 'LRD', 'LSL', 'LTL', // eslint-disable-line comma-spacing
-  'LVL', 'MAD', 'MDL', 'MGA', 'MKD', 'MNT', 'MOP', 'MRO', 'MUR', 'MVR', 'MWK', 'MXN', // eslint-disable-line comma-spacing
-  'MYR', 'MZN', 'NAD', 'NGN', 'NIO', 'NOK', 'NPR', 'NZD', 'PAB', 'PEN', 'PGK', 'PHP', // eslint-disable-line comma-spacing
-  'PKR', 'PLN', 'PYG', 'QAR', 'RON', 'RSD', 'RUB', 'RWF', 'SAR', 'SBD', 'SCR', 'SEK', // eslint-disable-line comma-spacing
-  'SGD', 'SHP', 'SLL', 'SOS', 'SRD', 'STD', 'SVC', 'SZL', 'THB', 'TJS', 'TOP', 'TRY', // eslint-disable-line comma-spacing
-  'TTD', 'TWD', 'TZS', 'UAH', 'UGX', 'USD', 'UYU', 'UZS', 'VND', 'VUV', 'WST', 'XAF', // eslint-disable-line comma-spacing
-  'XCD', 'XOF', 'XPF', 'YER', 'ZAR', 'ZMW']),
-
-  // The label of the payment button in the Checkout form (e.g. “Subscribe”,
-  // “Pay {{amount}}”, etc.). If you include {{amount}}, it will be replaced
-  // by the provided amount. Otherwise, the amount will be appended to the
-  // end of your label.
-  panelLabel: _propTypes2.default.string,
-
-  // Specify whether Checkout should validate the billing ZIP code (true or
-  // false)
-  zipCode: _propTypes2.default.bool,
-
-  // Specify whether Checkout should collect the user's billing address
-  // (true or false). The default is false.
-  billingAddress: _propTypes2.default.bool,
-
-  // Specify whether Checkout should collect the user's shipping address
-  // (true or false). The default is false.
-  shippingAddress: _propTypes2.default.bool,
-
-  // Specify whether Checkout should validate the billing ZIP code (true or
-  // false). The default is false.
-  email: _propTypes2.default.string,
-
-  // Specify whether to include the option to "Remember Me" for future
-  // purchases (true or false). The default is true.
-  allowRememberMe: _propTypes2.default.bool,
-
-  // Specify whether to accept Bitcoin in Checkout. The default is false.
-  bitcoin: _propTypes2.default.bool,
-
-  // Specify whether to accept Alipay ('auto', true, or false). The default
-  // is false.
-  alipay: _propTypes2.default.oneOf(['auto', true, false]),
-
-  // Specify if you need reusable access to the customer's Alipay account
-  // (true or false). The default is false.
-  alipayReusable: _propTypes2.default.bool,
-
-  // function() The callback to invoke when Checkout is opened (not supported
-  // in IE6 and IE7).
-  opened: _propTypes2.default.func,
-
-  // function() The callback to invoke when Checkout is closed (not supported
-  // in IE6 and IE7).
-  closed: _propTypes2.default.func
-};
-ReactStripeCheckout._isMounted = false;
-exports.default = ReactStripeCheckout;
-
-
-/***/ }),
-
-/***/ "./node_modules/react-toastify/dist/react-toastify.esm.js":
-/*!****************************************************************!*\
-  !*** ./node_modules/react-toastify/dist/react-toastify.esm.js ***!
-  \****************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Bounce": () => (/* binding */ Bounce),
-/* harmony export */   "Flip": () => (/* binding */ Flip),
-/* harmony export */   "Slide": () => (/* binding */ Slide),
-/* harmony export */   "ToastContainer": () => (/* binding */ ToastContainer),
-/* harmony export */   "Zoom": () => (/* binding */ Zoom),
-/* harmony export */   "collapseToast": () => (/* binding */ collapseToast),
-/* harmony export */   "cssTransition": () => (/* binding */ cssTransition),
-/* harmony export */   "toast": () => (/* binding */ toast),
-/* harmony export */   "useToast": () => (/* binding */ useToast),
-/* harmony export */   "useToastContainer": () => (/* binding */ useToastContainer)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var clsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! clsx */ "./node_modules/clsx/dist/clsx.m.js");
-/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
-
-
-
-
-function _extends() {
-  _extends = Object.assign || function (target) {
-    for (var i = 1; i < arguments.length; i++) {
-      var source = arguments[i];
-
-      for (var key in source) {
-        if (Object.prototype.hasOwnProperty.call(source, key)) {
-          target[key] = source[key];
-        }
-      }
-    }
-
-    return target;
-  };
-
-  return _extends.apply(this, arguments);
-}
-
-function _objectWithoutPropertiesLoose(source, excluded) {
-  if (source == null) return {};
-  var target = {};
-  var sourceKeys = Object.keys(source);
-  var key, i;
-
-  for (i = 0; i < sourceKeys.length; i++) {
-    key = sourceKeys[i];
-    if (excluded.indexOf(key) >= 0) continue;
-    target[key] = source[key];
-  }
-
-  return target;
-}
-
-function isNum(v) {
-  return typeof v === 'number' && !isNaN(v);
-}
-function isBool(v) {
-  return typeof v === 'boolean';
-}
-function isStr(v) {
-  return typeof v === 'string';
-}
-function isFn(v) {
-  return typeof v === 'function';
-}
-function parseClassName(v) {
-  return isStr(v) || isFn(v) ? v : null;
-}
-function isToastIdValid(toastId) {
-  return toastId === 0 || toastId;
-}
-function getAutoCloseDelay(toastAutoClose, containerAutoClose) {
-  return toastAutoClose === false || isNum(toastAutoClose) && toastAutoClose > 0 ? toastAutoClose : containerAutoClose;
-}
-var canUseDom = !!(typeof window !== 'undefined' && window.document && window.document.createElement);
-function canBeRendered(content) {
-  return (0,react__WEBPACK_IMPORTED_MODULE_0__.isValidElement)(content) || isStr(content) || isFn(content) || isNum(content);
-}
-
-var POSITION = {
-  TOP_LEFT: 'top-left',
-  TOP_RIGHT: 'top-right',
-  TOP_CENTER: 'top-center',
-  BOTTOM_LEFT: 'bottom-left',
-  BOTTOM_RIGHT: 'bottom-right',
-  BOTTOM_CENTER: 'bottom-center'
-};
-var TYPE = {
-  INFO: 'info',
-  SUCCESS: 'success',
-  WARNING: 'warning',
-  ERROR: 'error',
-  DEFAULT: 'default',
-  DARK: 'dark'
-};
-
-/**
- * Used to collapse toast after exit animation
- */
-function collapseToast(node, done, duration
-/* COLLAPSE_DURATION */
-) {
-  if (duration === void 0) {
-    duration = 300;
-  }
-
-  var height = node.scrollHeight;
-  var style = node.style;
-  requestAnimationFrame(function () {
-    style.minHeight = 'initial';
-    style.height = height + 'px';
-    style.transition = "all " + duration + "ms";
-    requestAnimationFrame(function () {
-      style.height = '0';
-      style.padding = '0';
-      style.margin = '0';
-      setTimeout(done, duration);
-    });
-  });
-}
-
-/**
- * Css animation that just work.
- * You could use animate.css for instance
- *
- *
- * ```
- * cssTransition({
- *   enter: "animate__animated animate__bounceIn",
- *   exit: "animate__animated animate__bounceOut"
- * })
- * ```
- *
- */
-
-function cssTransition(_ref) {
-  var enter = _ref.enter,
-      exit = _ref.exit,
-      _ref$appendPosition = _ref.appendPosition,
-      appendPosition = _ref$appendPosition === void 0 ? false : _ref$appendPosition,
-      _ref$collapse = _ref.collapse,
-      collapse = _ref$collapse === void 0 ? true : _ref$collapse,
-      _ref$collapseDuration = _ref.collapseDuration,
-      collapseDuration = _ref$collapseDuration === void 0 ? 300 : _ref$collapseDuration;
-  return function ToastTransition(_ref2) {
-    var children = _ref2.children,
-        position = _ref2.position,
-        preventExitTransition = _ref2.preventExitTransition,
-        done = _ref2.done,
-        nodeRef = _ref2.nodeRef,
-        isIn = _ref2.isIn;
-    var enterClassName = appendPosition ? enter + "--" + position : enter;
-    var exitClassName = appendPosition ? exit + "--" + position : exit;
-    var baseClassName = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)();
-    var animationStep = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(0
-    /* Enter */
-    );
-    (0,react__WEBPACK_IMPORTED_MODULE_0__.useLayoutEffect)(function () {
-      onEnter();
-    }, []);
-    (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-      if (!isIn) preventExitTransition ? onExited() : onExit();
-    }, [isIn]);
-
-    function onEnter() {
-      var node = nodeRef.current;
-      baseClassName.current = node.className;
-      node.className += " " + enterClassName;
-      node.addEventListener('animationend', onEntered);
-    }
-
-    function onEntered() {
-      var node = nodeRef.current;
-      node.removeEventListener('animationend', onEntered);
-
-      if (animationStep.current === 0
-      /* Enter */
-      ) {
-          node.className = baseClassName.current;
-        }
-    }
-
-    function onExit() {
-      animationStep.current = 1
-      /* Exit */
-      ;
-      var node = nodeRef.current;
-      node.className += " " + exitClassName;
-      node.addEventListener('animationend', onExited);
-    }
-
-    function onExited() {
-      var node = nodeRef.current;
-      node.removeEventListener('animationend', onExited);
-      collapse ? collapseToast(node, done, collapseDuration) : done();
-    }
-
-    return react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, children);
-  };
-}
-
-var eventManager = {
-  list: /*#__PURE__*/new Map(),
-  emitQueue: /*#__PURE__*/new Map(),
-  on: function on(event, callback) {
-    this.list.has(event) || this.list.set(event, []);
-    this.list.get(event).push(callback);
-    return this;
-  },
-  off: function off(event, callback) {
-    if (callback) {
-      var cb = this.list.get(event).filter(function (cb) {
-        return cb !== callback;
-      });
-      this.list.set(event, cb);
-      return this;
-    }
-
-    this.list["delete"](event);
-    return this;
-  },
-  cancelEmit: function cancelEmit(event) {
-    var timers = this.emitQueue.get(event);
-
-    if (timers) {
-      timers.forEach(clearTimeout);
-      this.emitQueue["delete"](event);
-    }
-
-    return this;
-  },
-
-  /**
-   * Enqueue the event at the end of the call stack
-   * Doing so let the user call toast as follow:
-   * toast('1')
-   * toast('2')
-   * toast('3')
-   * Without setTimemout the code above will not work
-   */
-  emit: function emit(event) {
-    var _this = this;
-
-    for (var _len = arguments.length, args = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
-      args[_key - 1] = arguments[_key];
-    }
-
-    this.list.has(event) && this.list.get(event).forEach(function (callback) {
-      var timer = setTimeout(function () {
-        // @ts-ignore
-        callback.apply(void 0, args);
-      }, 0);
-      _this.emitQueue.has(event) || _this.emitQueue.set(event, []);
-
-      _this.emitQueue.get(event).push(timer);
-    });
-  }
-};
-
-/**
- * `useKeeper` is a helper around `useRef`.
- *
- * You don't need to access the `.current`property to get the value
- * If refresh is set to true. The ref will be updated every render
- */
-
-function useKeeper(arg, refresh) {
-  if (refresh === void 0) {
-    refresh = false;
-  }
-
-  var ref = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(arg);
-  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    if (refresh) ref.current = arg;
-  });
-  return ref.current;
-}
-
-function reducer(state, action) {
-  switch (action.type) {
-    case 0
-    /* ADD */
-    :
-      return [].concat(state, [action.toastId]).filter(function (id) {
-        return id !== action.staleId;
-      });
-
-    case 1
-    /* REMOVE */
-    :
-      return isToastIdValid(action.toastId) ? state.filter(function (id) {
-        return id !== action.toastId;
-      }) : [];
-  }
-}
-
-function useToastContainer(props) {
-  var _useReducer = (0,react__WEBPACK_IMPORTED_MODULE_0__.useReducer)(function (x) {
-    return x + 1;
-  }, 0),
-      forceUpdate = _useReducer[1];
-
-  var _useReducer2 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useReducer)(reducer, []),
-      toast = _useReducer2[0],
-      dispatch = _useReducer2[1];
-
-  var containerRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
-  var toastCount = useKeeper(0);
-  var queue = useKeeper([]);
-  var collection = useKeeper({});
-  var instance = useKeeper({
-    toastKey: 1,
-    displayedToast: 0,
-    props: props,
-    containerId: null,
-    isToastActive: isToastActive,
-    getToast: function getToast(id) {
-      return collection[id] || null;
-    }
-  });
-  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    instance.containerId = props.containerId;
-    eventManager.cancelEmit(3
-    /* WillUnmount */
-    ).on(0
-    /* Show */
-    , buildToast).on(1
-    /* Clear */
-    , function (toastId) {
-      return containerRef.current && removeToast(toastId);
-    }).on(5
-    /* ClearWaitingQueue */
-    , clearWaitingQueue).emit(2
-    /* DidMount */
-    , instance);
-    return function () {
-      return eventManager.emit(3
-      /* WillUnmount */
-      , instance);
-    };
-  }, []);
-  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    instance.isToastActive = isToastActive;
-    instance.displayedToast = toast.length;
-    eventManager.emit(4
-    /* Change */
-    , toast.length, props.containerId);
-  }, [toast]);
-  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    instance.props = props;
-  });
-
-  function isToastActive(id) {
-    return toast.indexOf(id) !== -1;
-  }
-
-  function clearWaitingQueue(_ref) {
-    var containerId = _ref.containerId;
-    var _instance$props = instance.props,
-        limit = _instance$props.limit,
-        enableMultiContainer = _instance$props.enableMultiContainer;
-
-    if (limit && (!containerId || instance.containerId === containerId && enableMultiContainer)) {
-      toastCount -= queue.length;
-      queue = [];
-    }
-  }
-
-  function removeToast(toastId) {
-    dispatch({
-      type: 1
-      /* REMOVE */
-      ,
-      toastId: toastId
-    });
-  }
-
-  function dequeueToast() {
-    var _queue$shift = queue.shift(),
-        toastContent = _queue$shift.toastContent,
-        toastProps = _queue$shift.toastProps,
-        staleId = _queue$shift.staleId;
-
-    appendToast(toastContent, toastProps, staleId);
-  }
-  /**
-   * check if a container is attached to the dom
-   * check for multi-container, build only if associated
-   * check for duplicate toastId if no update
-   */
-
-
-  function isNotValid(_ref2) {
-    var containerId = _ref2.containerId,
-        toastId = _ref2.toastId,
-        updateId = _ref2.updateId;
-    return !containerRef.current || instance.props.enableMultiContainer && containerId !== instance.props.containerId || collection[toastId] && updateId == null ? true : false;
-  } // this function and all the function called inside needs to rely on ref(`useKeeper`)
-
-
-  function buildToast(content, _ref3) {
-    var delay = _ref3.delay,
-        staleId = _ref3.staleId,
-        options = _objectWithoutPropertiesLoose(_ref3, ["delay", "staleId"]);
-
-    if (!canBeRendered(content) || isNotValid(options)) return;
-    var toastId = options.toastId,
-        updateId = options.updateId;
-    var props = instance.props;
-
-    var closeToast = function closeToast() {
-      return removeToast(toastId);
-    };
-
-    var isNotAnUpdate = options.updateId == null;
-    if (isNotAnUpdate) toastCount++;
-    var toastProps = {
-      toastId: toastId,
-      updateId: updateId,
-      isIn: false,
-      key: options.key || instance.toastKey++,
-      type: options.type,
-      closeToast: closeToast,
-      closeButton: options.closeButton,
-      rtl: props.rtl,
-      position: options.position || props.position,
-      transition: options.transition || props.transition,
-      className: parseClassName(options.className || props.toastClassName),
-      bodyClassName: parseClassName(options.bodyClassName || props.bodyClassName),
-      style: options.style || props.toastStyle,
-      bodyStyle: options.bodyStyle || props.bodyStyle,
-      onClick: options.onClick || props.onClick,
-      pauseOnHover: isBool(options.pauseOnHover) ? options.pauseOnHover : props.pauseOnHover,
-      pauseOnFocusLoss: isBool(options.pauseOnFocusLoss) ? options.pauseOnFocusLoss : props.pauseOnFocusLoss,
-      draggable: isBool(options.draggable) ? options.draggable : props.draggable,
-      draggablePercent: isNum(options.draggablePercent) ? options.draggablePercent : props.draggablePercent,
-      draggableDirection: options.draggableDirection || props.draggableDirection,
-      closeOnClick: isBool(options.closeOnClick) ? options.closeOnClick : props.closeOnClick,
-      progressClassName: parseClassName(options.progressClassName || props.progressClassName),
-      progressStyle: options.progressStyle || props.progressStyle,
-      autoClose: getAutoCloseDelay(options.autoClose, props.autoClose),
-      hideProgressBar: isBool(options.hideProgressBar) ? options.hideProgressBar : props.hideProgressBar,
-      progress: options.progress,
-      role: isStr(options.role) ? options.role : props.role,
-      deleteToast: function deleteToast() {
-        removeFromCollection(toastId);
-      }
-    };
-    if (isFn(options.onOpen)) toastProps.onOpen = options.onOpen;
-    if (isFn(options.onClose)) toastProps.onClose = options.onClose; //  tweak for vertical dragging
-
-    if (toastProps.draggableDirection === "y"
-    /* Y */
-    && toastProps.draggablePercent === 80
-    /* DRAGGABLE_PERCENT */
-    ) {
-        toastProps.draggablePercent *= 1.5;
-      }
-
-    var closeButton = props.closeButton;
-
-    if (options.closeButton === false || canBeRendered(options.closeButton)) {
-      closeButton = options.closeButton;
-    } else if (options.closeButton === true) {
-      closeButton = canBeRendered(props.closeButton) ? props.closeButton : true;
-    }
-
-    toastProps.closeButton = closeButton;
-    var toastContent = content;
-
-    if ((0,react__WEBPACK_IMPORTED_MODULE_0__.isValidElement)(content) && !isStr(content.type)) {
-      toastContent = (0,react__WEBPACK_IMPORTED_MODULE_0__.cloneElement)(content, {
-        closeToast: closeToast,
-        toastProps: toastProps
-      });
-    } else if (isFn(content)) {
-      toastContent = content({
-        closeToast: closeToast,
-        toastProps: toastProps
-      });
-    } // not handling limit + delay by design. Waiting for user feedback first
-
-
-    if (props.limit && props.limit > 0 && toastCount > props.limit && isNotAnUpdate) {
-      queue.push({
-        toastContent: toastContent,
-        toastProps: toastProps,
-        staleId: staleId
-      });
-    } else if (isNum(delay) && delay > 0) {
-      setTimeout(function () {
-        appendToast(toastContent, toastProps, staleId);
-      }, delay);
-    } else {
-      appendToast(toastContent, toastProps, staleId);
-    }
-  }
-
-  function appendToast(content, toastProps, staleId) {
-    var toastId = toastProps.toastId;
-    if (staleId) delete collection[staleId];
-    collection[toastId] = {
-      content: content,
-      props: toastProps
-    };
-    dispatch({
-      type: 0
-      /* ADD */
-      ,
-      toastId: toastId,
-      staleId: staleId
-    });
-  }
-
-  function removeFromCollection(toastId) {
-    delete collection[toastId];
-    var queueLen = queue.length;
-    toastCount = isToastIdValid(toastId) ? toastCount - 1 : toastCount - instance.displayedToast;
-    if (toastCount < 0) toastCount = 0;
-
-    if (queueLen > 0) {
-      var freeSlot = isToastIdValid(toastId) ? 1 : instance.props.limit;
-
-      if (queueLen === 1 || freeSlot === 1) {
-        instance.displayedToast++;
-        dequeueToast();
-      } else {
-        var toDequeue = freeSlot > queueLen ? queueLen : freeSlot;
-        instance.displayedToast = toDequeue;
-
-        for (var i = 0; i < toDequeue; i++) {
-          dequeueToast();
-        }
-      }
-    } else {
-      forceUpdate();
-    }
-  }
-
-  function getToastToRender(cb) {
-    var toastToRender = {};
-    var toastList = props.newestOnTop ? Object.keys(collection).reverse() : Object.keys(collection);
-
-    for (var i = 0; i < toastList.length; i++) {
-      var _toast = collection[toastList[i]];
-      var position = _toast.props.position;
-      toastToRender[position] || (toastToRender[position] = []);
-      toastToRender[position].push(_toast);
-    }
-
-    return Object.keys(toastToRender).map(function (p) {
-      return cb(p, toastToRender[p]);
-    });
-  }
-
-  return {
-    getToastToRender: getToastToRender,
-    collection: collection,
-    containerRef: containerRef,
-    isToastActive: isToastActive
-  };
-}
-
-function getX(e) {
-  return e.targetTouches && e.targetTouches.length >= 1 ? e.targetTouches[0].clientX : e.clientX;
-}
-
-function getY(e) {
-  return e.targetTouches && e.targetTouches.length >= 1 ? e.targetTouches[0].clientY : e.clientY;
-}
-
-function useToast(props) {
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(true),
-      isRunning = _useState[0],
-      setIsRunning = _useState[1];
-
-  var _useState2 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
-      preventExitTransition = _useState2[0],
-      setPreventExitTransition = _useState2[1];
-
-  var toastRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
-  var drag = useKeeper({
-    start: 0,
-    x: 0,
-    y: 0,
-    delta: 0,
-    removalDistance: 0,
-    canCloseOnClick: true,
-    canDrag: false,
-    boundingRect: null
-  });
-  var syncProps = useKeeper(props, true);
-  var autoClose = props.autoClose,
-      pauseOnHover = props.pauseOnHover,
-      closeToast = props.closeToast,
-      onClick = props.onClick,
-      closeOnClick = props.closeOnClick;
-  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    if (isFn(props.onOpen)) props.onOpen((0,react__WEBPACK_IMPORTED_MODULE_0__.isValidElement)(props.children) && props.children.props);
-    return function () {
-      if (isFn(syncProps.onClose)) syncProps.onClose((0,react__WEBPACK_IMPORTED_MODULE_0__.isValidElement)(syncProps.children) && syncProps.children.props);
-    };
-  }, []);
-  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    props.draggable && bindDragEvents();
-    return function () {
-      props.draggable && unbindDragEvents();
-    };
-  }, [props.draggable]);
-  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    props.pauseOnFocusLoss && bindFocusEvents();
-    return function () {
-      props.pauseOnFocusLoss && unbindFocusEvents();
-    };
-  }, [props.pauseOnFocusLoss]);
-
-  function onDragStart(e) {
-    if (props.draggable) {
-      var toast = toastRef.current;
-      drag.canCloseOnClick = true;
-      drag.canDrag = true;
-      drag.boundingRect = toast.getBoundingClientRect();
-      toast.style.transition = '';
-      drag.x = getX(e.nativeEvent);
-      drag.y = getY(e.nativeEvent);
-
-      if (props.draggableDirection === "x"
-      /* X */
-      ) {
-          drag.start = drag.x;
-          drag.removalDistance = toast.offsetWidth * (props.draggablePercent / 100);
-        } else {
-        drag.start = drag.y;
-        drag.removalDistance = toast.offsetHeight * (props.draggablePercent / 100);
-      }
-    }
-  }
-
-  function onDragTransitionEnd() {
-    if (drag.boundingRect) {
-      var _drag$boundingRect = drag.boundingRect,
-          top = _drag$boundingRect.top,
-          bottom = _drag$boundingRect.bottom,
-          left = _drag$boundingRect.left,
-          right = _drag$boundingRect.right;
-
-      if (props.pauseOnHover && drag.x >= left && drag.x <= right && drag.y >= top && drag.y <= bottom) {
-        pauseToast();
-      } else {
-        playToast();
-      }
-    }
-  }
-
-  function playToast() {
-    setIsRunning(true);
-  }
-
-  function pauseToast() {
-    setIsRunning(false);
-  }
-
-  function bindFocusEvents() {
-    if (!document.hasFocus()) pauseToast();
-    window.addEventListener('focus', playToast);
-    window.addEventListener('blur', pauseToast);
-  }
-
-  function unbindFocusEvents() {
-    window.removeEventListener('focus', playToast);
-    window.removeEventListener('blur', pauseToast);
-  }
-
-  function bindDragEvents() {
-    document.addEventListener('mousemove', onDragMove);
-    document.addEventListener('mouseup', onDragEnd);
-    document.addEventListener('touchmove', onDragMove);
-    document.addEventListener('touchend', onDragEnd);
-  }
-
-  function unbindDragEvents() {
-    document.removeEventListener('mousemove', onDragMove);
-    document.removeEventListener('mouseup', onDragEnd);
-    document.removeEventListener('touchmove', onDragMove);
-    document.removeEventListener('touchend', onDragEnd);
-  }
-
-  function onDragMove(e) {
-    if (drag.canDrag) {
-      e.preventDefault();
-      var toast = toastRef.current;
-      if (isRunning) pauseToast();
-      drag.x = getX(e);
-      drag.y = getY(e);
-
-      if (props.draggableDirection === "x"
-      /* X */
-      ) {
-          drag.delta = drag.x - drag.start;
-        } else {
-        drag.delta = drag.y - drag.start;
-      } // prevent false positif during a toast click
-
-
-      if (drag.start !== drag.x) drag.canCloseOnClick = false;
-      toast.style.transform = "translate" + props.draggableDirection + "(" + drag.delta + "px)";
-      toast.style.opacity = "" + (1 - Math.abs(drag.delta / drag.removalDistance));
-    }
-  }
-
-  function onDragEnd() {
-    var toast = toastRef.current;
-
-    if (drag.canDrag) {
-      drag.canDrag = false;
-
-      if (Math.abs(drag.delta) > drag.removalDistance) {
-        setPreventExitTransition(true);
-        props.closeToast();
-        return;
-      }
-
-      toast.style.transition = 'transform 0.2s, opacity 0.2s';
-      toast.style.transform = "translate" + props.draggableDirection + "(0)";
-      toast.style.opacity = '1';
-    }
-  }
-
-  var eventHandlers = {
-    onMouseDown: onDragStart,
-    onTouchStart: onDragStart,
-    onMouseUp: onDragTransitionEnd,
-    onTouchEnd: onDragTransitionEnd
-  };
-
-  if (autoClose && pauseOnHover) {
-    eventHandlers.onMouseEnter = pauseToast;
-    eventHandlers.onMouseLeave = playToast;
-  } // prevent toast from closing when user drags the toast
-
-
-  if (closeOnClick) {
-    eventHandlers.onClick = function (e) {
-      onClick && onClick(e);
-      drag.canCloseOnClick && closeToast();
-    };
-  }
-
-  return {
-    playToast: playToast,
-    pauseToast: pauseToast,
-    isRunning: isRunning,
-    preventExitTransition: preventExitTransition,
-    toastRef: toastRef,
-    eventHandlers: eventHandlers
-  };
-}
-
-function CloseButton(_ref) {
-  var closeToast = _ref.closeToast,
-      type = _ref.type,
-      _ref$ariaLabel = _ref.ariaLabel,
-      ariaLabel = _ref$ariaLabel === void 0 ? 'close' : _ref$ariaLabel;
-  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("button", {
-    className: "Toastify"
-    /* CSS_NAMESPACE */
-    + "__close-button " + "Toastify"
-    /* CSS_NAMESPACE */
-    + "__close-button--" + type,
-    type: "button",
-    onClick: function onClick(e) {
-      e.stopPropagation();
-      closeToast(e);
-    },
-    "aria-label": ariaLabel
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
-    "aria-hidden": "true",
-    viewBox: "0 0 14 16"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
-    fillRule: "evenodd",
-    d: "M7.71 8.23l3.75 3.75-1.48 1.48-3.75-3.75-3.75 3.75L1 11.98l3.75-3.75L1 4.48 2.48 3l3.75 3.75L9.98 3l1.48 1.48-3.75 3.75z"
-  })));
-}
-
-function ProgressBar(_ref) {
-  var _cx, _animationEvent;
-
-  var delay = _ref.delay,
-      isRunning = _ref.isRunning,
-      closeToast = _ref.closeToast,
-      type = _ref.type,
-      hide = _ref.hide,
-      className = _ref.className,
-      userStyle = _ref.style,
-      controlledProgress = _ref.controlledProgress,
-      progress = _ref.progress,
-      rtl = _ref.rtl,
-      isIn = _ref.isIn;
-
-  var style = _extends({}, userStyle, {
-    animationDuration: delay + "ms",
-    animationPlayState: isRunning ? 'running' : 'paused',
-    opacity: hide ? 0 : 1
-  });
-
-  if (controlledProgress) style.transform = "scaleX(" + progress + ")";
-  var defaultClassName = (0,clsx__WEBPACK_IMPORTED_MODULE_1__.default)("Toastify"
-  /* CSS_NAMESPACE */
-  + "__progress-bar", controlledProgress ? "Toastify"
-  /* CSS_NAMESPACE */
-  + "__progress-bar--controlled" : "Toastify"
-  /* CSS_NAMESPACE */
-  + "__progress-bar--animated", "Toastify"
-  /* CSS_NAMESPACE */
-  + "__progress-bar--" + type, (_cx = {}, _cx["Toastify"
-  /* CSS_NAMESPACE */
-  + "__progress-bar--rtl"] = rtl, _cx));
-  var classNames = isFn(className) ? className({
-    rtl: rtl,
-    type: type,
-    defaultClassName: defaultClassName
-  }) : (0,clsx__WEBPACK_IMPORTED_MODULE_1__.default)(defaultClassName, className); // 🧐 controlledProgress is derived from progress
-  // so if controlledProgress is set
-  // it means that this is also the case for progress
-
-  var animationEvent = (_animationEvent = {}, _animationEvent[controlledProgress && progress >= 1 ? 'onTransitionEnd' : 'onAnimationEnd'] = controlledProgress && progress < 1 ? null : function () {
-    isIn && closeToast();
-  }, _animationEvent); // TODO: add aria-valuenow, aria-valuemax, aria-valuemin
-
-  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", Object.assign({
-    role: "progressbar",
-    className: classNames,
-    style: style
-  }, animationEvent));
-}
-ProgressBar.defaultProps = {
-  type: TYPE.DEFAULT,
-  hide: false
-};
-
-var Toast = function Toast(props) {
-  var _cx;
-
-  var _useToast = useToast(props),
-      isRunning = _useToast.isRunning,
-      preventExitTransition = _useToast.preventExitTransition,
-      toastRef = _useToast.toastRef,
-      eventHandlers = _useToast.eventHandlers;
-
-  var closeButton = props.closeButton,
-      children = props.children,
-      autoClose = props.autoClose,
-      onClick = props.onClick,
-      type = props.type,
-      hideProgressBar = props.hideProgressBar,
-      closeToast = props.closeToast,
-      Transition = props.transition,
-      position = props.position,
-      className = props.className,
-      style = props.style,
-      bodyClassName = props.bodyClassName,
-      bodyStyle = props.bodyStyle,
-      progressClassName = props.progressClassName,
-      progressStyle = props.progressStyle,
-      updateId = props.updateId,
-      role = props.role,
-      progress = props.progress,
-      rtl = props.rtl,
-      toastId = props.toastId,
-      deleteToast = props.deleteToast,
-      isIn = props.isIn;
-  var defaultClassName = (0,clsx__WEBPACK_IMPORTED_MODULE_1__.default)("Toastify"
-  /* CSS_NAMESPACE */
-  + "__toast", "Toastify"
-  /* CSS_NAMESPACE */
-  + "__toast--" + type, (_cx = {}, _cx["Toastify"
-  /* CSS_NAMESPACE */
-  + "__toast--rtl"] = rtl, _cx));
-  var cssClasses = isFn(className) ? className({
-    rtl: rtl,
-    position: position,
-    type: type,
-    defaultClassName: defaultClassName
-  }) : (0,clsx__WEBPACK_IMPORTED_MODULE_1__.default)(defaultClassName, className);
-  var isProgressControlled = !!progress;
-
-  function renderCloseButton(closeButton) {
-    if (!closeButton) return;
-    var props = {
-      closeToast: closeToast,
-      type: type
-    };
-    if (isFn(closeButton)) return closeButton(props);
-    if ((0,react__WEBPACK_IMPORTED_MODULE_0__.isValidElement)(closeButton)) return (0,react__WEBPACK_IMPORTED_MODULE_0__.cloneElement)(closeButton, props);
-  }
-
-  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(Transition, {
-    isIn: isIn,
-    done: deleteToast,
-    position: position,
-    preventExitTransition: preventExitTransition,
-    nodeRef: toastRef
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", Object.assign({
-    id: toastId,
-    onClick: onClick,
-    className: cssClasses
-  }, eventHandlers, {
-    style: style,
-    ref: toastRef
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", Object.assign({}, isIn && {
-    role: role
-  }, {
-    className: isFn(bodyClassName) ? bodyClassName({
-      type: type
-    }) : (0,clsx__WEBPACK_IMPORTED_MODULE_1__.default)("Toastify"
-    /* CSS_NAMESPACE */
-    + "__toast-body", bodyClassName),
-    style: bodyStyle
-  }), children), renderCloseButton(closeButton), (autoClose || isProgressControlled) && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(ProgressBar, Object.assign({}, updateId && !isProgressControlled ? {
-    key: "pb-" + updateId
-  } : {}, {
-    rtl: rtl,
-    delay: autoClose,
-    isRunning: isRunning,
-    isIn: isIn,
-    closeToast: closeToast,
-    hide: hideProgressBar,
-    type: type,
-    style: progressStyle,
-    className: progressClassName,
-    controlledProgress: isProgressControlled,
-    progress: progress
-  }))));
-};
-
-var Bounce = /*#__PURE__*/cssTransition({
-  enter: "Toastify"
-  /* CSS_NAMESPACE */
-  + "--animate " + "Toastify"
-  /* CSS_NAMESPACE */
-  + "__bounce-enter",
-  exit: "Toastify"
-  /* CSS_NAMESPACE */
-  + "--animate " + "Toastify"
-  /* CSS_NAMESPACE */
-  + "__bounce-exit",
-  appendPosition: true
-});
-var Slide = /*#__PURE__*/cssTransition({
-  enter: "Toastify"
-  /* CSS_NAMESPACE */
-  + "--animate " + "Toastify"
-  /* CSS_NAMESPACE */
-  + "__slide-enter",
-  exit: "Toastify"
-  /* CSS_NAMESPACE */
-  + "--animate " + "Toastify"
-  /* CSS_NAMESPACE */
-  + "__slide-exit",
-  appendPosition: true
-});
-var Zoom = /*#__PURE__*/cssTransition({
-  enter: "Toastify"
-  /* CSS_NAMESPACE */
-  + "--animate " + "Toastify"
-  /* CSS_NAMESPACE */
-  + "__zoom-enter",
-  exit: "Toastify"
-  /* CSS_NAMESPACE */
-  + "--animate " + "Toastify"
-  /* CSS_NAMESPACE */
-  + "__zoom-exit"
-});
-var Flip = /*#__PURE__*/cssTransition({
-  enter: "Toastify"
-  /* CSS_NAMESPACE */
-  + "--animate " + "Toastify"
-  /* CSS_NAMESPACE */
-  + "__flip-enter",
-  exit: "Toastify"
-  /* CSS_NAMESPACE */
-  + "--animate " + "Toastify"
-  /* CSS_NAMESPACE */
-  + "__flip-exit"
-});
-
-var ToastContainer = function ToastContainer(props) {
-  var _useToastContainer = useToastContainer(props),
-      getToastToRender = _useToastContainer.getToastToRender,
-      containerRef = _useToastContainer.containerRef,
-      isToastActive = _useToastContainer.isToastActive;
-
-  var className = props.className,
-      style = props.style,
-      rtl = props.rtl,
-      containerId = props.containerId;
-
-  function getClassName(position) {
-    var _cx;
-
-    var defaultClassName = (0,clsx__WEBPACK_IMPORTED_MODULE_1__.default)("Toastify"
-    /* CSS_NAMESPACE */
-    + "__toast-container", "Toastify"
-    /* CSS_NAMESPACE */
-    + "__toast-container--" + position, (_cx = {}, _cx["Toastify"
-    /* CSS_NAMESPACE */
-    + "__toast-container--rtl"] = rtl, _cx));
-    return isFn(className) ? className({
-      position: position,
-      rtl: rtl,
-      defaultClassName: defaultClassName
-    }) : (0,clsx__WEBPACK_IMPORTED_MODULE_1__.default)(defaultClassName, parseClassName(className));
-  }
-
-  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    ref: containerRef,
-    className: "Toastify"
-    /* CSS_NAMESPACE */
-    ,
-    id: containerId
-  }, getToastToRender(function (position, toastList) {
-    var containerStyle = toastList.length === 0 ? _extends({}, style, {
-      pointerEvents: 'none'
-    }) : _extends({}, style);
-    return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-      className: getClassName(position),
-      style: containerStyle,
-      key: "container-" + position
-    }, toastList.map(function (_ref) {
-      var content = _ref.content,
-          toastProps = _ref.props;
-      return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(Toast, Object.assign({}, toastProps, {
-        isIn: isToastActive(toastProps.toastId),
-        key: "toast-" + toastProps.key,
-        closeButton: toastProps.closeButton === true ? CloseButton : toastProps.closeButton
-      }), content);
-    }));
-  }));
-};
-ToastContainer.defaultProps = {
-  position: POSITION.TOP_RIGHT,
-  transition: Bounce,
-  rtl: false,
-  autoClose: 5000,
-  hideProgressBar: false,
-  closeButton: CloseButton,
-  pauseOnHover: true,
-  pauseOnFocusLoss: true,
-  closeOnClick: true,
-  newestOnTop: false,
-  draggable: true,
-  draggablePercent: 80
-  /* DRAGGABLE_PERCENT */
-  ,
-  draggableDirection: "x"
-  /* X */
-  ,
-  role: 'alert'
-};
-
-var containers = /*#__PURE__*/new Map();
-var latestInstance;
-var containerDomNode;
-var containerConfig;
-var queue = [];
-var lazy = false;
-/**
- * Check whether any container is currently mounted in the DOM
- */
-
-function isAnyContainerMounted() {
-  return containers.size > 0;
-}
-/**
- * Get the toast by id, given it's in the DOM, otherwise returns null
- */
-
-
-function getToast(toastId, _ref) {
-  var containerId = _ref.containerId;
-  var container = containers.get(containerId || latestInstance);
-  if (!container) return null;
-  return container.getToast(toastId);
-}
-/**
- * Generate a random toastId
- */
-
-
-function generateToastId() {
-  return Math.random().toString(36).substr(2, 9);
-}
-/**
- * Generate a toastId or use the one provided
- */
-
-
-function getToastId(options) {
-  if (options && (isStr(options.toastId) || isNum(options.toastId))) {
-    return options.toastId;
-  }
-
-  return generateToastId();
-}
-/**
- * If the container is not mounted, the toast is enqueued and
- * the container lazy mounted
- */
-
-
-function dispatchToast(content, options) {
-  if (isAnyContainerMounted()) {
-    eventManager.emit(0
-    /* Show */
-    , content, options);
-  } else {
-    queue.push({
-      content: content,
-      options: options
-    });
-
-    if (lazy && canUseDom) {
-      lazy = false;
-      containerDomNode = document.createElement('div');
-      document.body.appendChild(containerDomNode);
-      (0,react_dom__WEBPACK_IMPORTED_MODULE_2__.render)((0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(ToastContainer, Object.assign({}, containerConfig)), containerDomNode);
-    }
-  }
-
-  return options.toastId;
-}
-/**
- * Merge provided options with the defaults settings and generate the toastId
- */
-
-
-function mergeOptions(type, options) {
-  return _extends({}, options, {
-    type: options && options.type || type,
-    toastId: getToastId(options)
-  });
-}
-
-var createToastByType = function createToastByType(type) {
-  return function (content, options) {
-    return dispatchToast(content, mergeOptions(type, options));
-  };
-};
-
-var toast = function toast(content, options) {
-  return dispatchToast(content, mergeOptions(TYPE.DEFAULT, options));
-};
-
-toast.success = /*#__PURE__*/createToastByType(TYPE.SUCCESS);
-toast.info = /*#__PURE__*/createToastByType(TYPE.INFO);
-toast.error = /*#__PURE__*/createToastByType(TYPE.ERROR);
-toast.warning = /*#__PURE__*/createToastByType(TYPE.WARNING);
-toast.dark = /*#__PURE__*/createToastByType(TYPE.DARK);
-toast.warn = toast.warning;
-/**
- * Remove toast programmaticaly
- */
-
-toast.dismiss = function (id) {
-  return eventManager.emit(1
-  /* Clear */
-  , id);
-};
-/**
- * Clear waiting queue when limit is used
- */
-
-
-toast.clearWaitingQueue = function (params) {
-  if (params === void 0) {
-    params = {};
-  }
-
-  return eventManager.emit(5
-  /* ClearWaitingQueue */
-  , params);
-};
-/**
- * return true if one container is displaying the toast
- */
-
-
-toast.isActive = function (id) {
-  var isToastActive = false;
-  containers.forEach(function (container) {
-    if (container.isToastActive && container.isToastActive(id)) {
-      isToastActive = true;
-    }
-  });
-  return isToastActive;
-};
-
-toast.update = function (toastId, options) {
-  if (options === void 0) {
-    options = {};
-  }
-
-  // if you call toast and toast.update directly nothing will be displayed
-  // this is why I defered the update
-  setTimeout(function () {
-    var toast = getToast(toastId, options);
-
-    if (toast) {
-      var oldOptions = toast.props,
-          oldContent = toast.content;
-
-      var nextOptions = _extends({}, oldOptions, options, {
-        toastId: options.toastId || toastId,
-        updateId: generateToastId()
-      });
-
-      if (nextOptions.toastId !== toastId) nextOptions.staleId = toastId;
-      var content = nextOptions.render || oldContent;
-      delete nextOptions.render;
-      dispatchToast(content, nextOptions);
-    }
-  }, 0);
-};
-/**
- * Used for controlled progress bar.
- */
-
-
-toast.done = function (id) {
-  toast.update(id, {
-    progress: 1
-  });
-};
-/**
- * Track changes. The callback get the number of toast displayed
- *
- */
-
-
-toast.onChange = function (callback) {
-  if (isFn(callback)) {
-    eventManager.on(4
-    /* Change */
-    , callback);
-  }
-
-  return function () {
-    isFn(callback) && eventManager.off(4
-    /* Change */
-    , callback);
-  };
-};
-/**
- * Configure the ToastContainer when lazy mounted
- */
-
-
-toast.configure = function (config) {
-  if (config === void 0) {
-    config = {};
-  }
-
-  lazy = true;
-  containerConfig = config;
-};
-
-toast.POSITION = POSITION;
-toast.TYPE = TYPE;
-/**
- * Wait until the ToastContainer is mounted to dispatch the toast
- * and attach isActive method
- */
-
-eventManager.on(2
-/* DidMount */
-, function (containerInstance) {
-  latestInstance = containerInstance.containerId || containerInstance;
-  containers.set(latestInstance, containerInstance);
-  queue.forEach(function (item) {
-    eventManager.emit(0
-    /* Show */
-    , item.content, item.options);
-  });
-  queue = [];
-}).on(3
-/* WillUnmount */
-, function (containerInstance) {
-  containers["delete"](containerInstance.containerId || containerInstance);
-
-  if (containers.size === 0) {
-    eventManager.off(0
-    /* Show */
-    ).off(1
-    /* Clear */
-    ).off(5
-    /* ClearWaitingQueue */
-    );
-  }
-
-  if (canUseDom && containerDomNode) {
-    document.body.removeChild(containerDomNode);
-  }
-});
-
-
-//# sourceMappingURL=react-toastify.esm.js.map
-
-
-/***/ }),
-
 /***/ "./node_modules/react/cjs/react-jsx-runtime.development.js":
 /*!*****************************************************************!*\
   !*** ./node_modules/react/cjs/react-jsx-runtime.development.js ***!
@@ -54449,10 +52463,10 @@ if (false) {} else {
 
 /***/ }),
 
-/***/ "./node_modules/react-toastify/dist/ReactToastify.css":
-/*!************************************************************!*\
-  !*** ./node_modules/react-toastify/dist/ReactToastify.css ***!
-  \************************************************************/
+/***/ "./resources/js/componets/App.css":
+/*!****************************************!*\
+  !*** ./resources/js/componets/App.css ***!
+  \****************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -54460,9 +52474,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
-/* harmony import */ var _style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _css_loader_dist_cjs_js_ruleSet_1_rules_5_oneOf_1_use_1_postcss_loader_dist_cjs_js_ruleSet_1_rules_5_oneOf_1_use_2_ReactToastify_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../css-loader/dist/cjs.js??ruleSet[1].rules[5].oneOf[1].use[1]!../../postcss-loader/dist/cjs.js??ruleSet[1].rules[5].oneOf[1].use[2]!./ReactToastify.css */ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[5].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[5].oneOf[1].use[2]!./node_modules/react-toastify/dist/ReactToastify.css");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_5_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_5_oneOf_1_use_2_App_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[5].oneOf[1].use[1]!../../../node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[5].oneOf[1].use[2]!./App.css */ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[5].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[5].oneOf[1].use[2]!./resources/js/componets/App.css");
 
             
 
@@ -54471,11 +52485,11 @@ var options = {};
 options.insert = "head";
 options.singleton = false;
 
-var update = _style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_css_loader_dist_cjs_js_ruleSet_1_rules_5_oneOf_1_use_1_postcss_loader_dist_cjs_js_ruleSet_1_rules_5_oneOf_1_use_2_ReactToastify_css__WEBPACK_IMPORTED_MODULE_1__.default, options);
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_5_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_5_oneOf_1_use_2_App_css__WEBPACK_IMPORTED_MODULE_1__.default, options);
 
 
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_css_loader_dist_cjs_js_ruleSet_1_rules_5_oneOf_1_use_1_postcss_loader_dist_cjs_js_ruleSet_1_rules_5_oneOf_1_use_2_ReactToastify_css__WEBPACK_IMPORTED_MODULE_1__.default.locals || {});
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_5_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_5_oneOf_1_use_2_App_css__WEBPACK_IMPORTED_MODULE_1__.default.locals || {});
 
 /***/ }),
 
