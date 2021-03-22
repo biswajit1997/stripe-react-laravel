@@ -1,0 +1,30 @@
+{
+    "private": true,
+    "scripts": {
+        "dev": "npm run development",
+        "development": "mix",
+        "watch": "mix watch",
+        "watch-poll": "mix watch -- --watch-options-poll=1000",
+        "hot": "mix watch --hot",
+        "prod": "npm run production",
+        "production": "mix --production"
+    },
+    "devDependencies": {
+        "@babel/preset-react": "^7.12.13",
+        "axios": "^0.21.1",
+        "browser-sync": "^2.26.14",
+        "browser-sync-webpack-plugin": "^2.2.2",
+        "laravel-mix": "^6.0.6",
+        "lodash": "^4.17.19",
+        "postcss": "^8.1.14",
+        "react": "^17.0.1",
+        "react-dom": "^17.0.1"
+    },
+    "dependencies": {
+        "@stripe/react-stripe-js": "^1.4.0",
+        "@stripe/stripe-js": "^1.13.1",
+        "react-stripe-checkout": "^2.6.3",
+        "react-toastify": "^7.0.3",
+        "stripe": "^8.138.0"
+    }
+}
